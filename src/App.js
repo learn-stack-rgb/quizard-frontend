@@ -5,13 +5,12 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
+import DeckNew from './pages/DeckNew'
 import mockCards from './mockCards.js'
 import mockDecks from './mockDecks.js'
 import mockUsers from './mockUsers.js'
 import CardProtectedIndex from './pages/CardProtectedIndex.js'
 import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
-
-
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(mockUsers[0])
@@ -24,6 +23,7 @@ const App = () => {
       <Header currentUser={currentUser}/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/decknew" element={<DeckNew />} />
         {currentUser && (
           <>
             <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
@@ -34,7 +34,6 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-
     </>
   );
 }
