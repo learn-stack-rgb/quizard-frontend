@@ -7,7 +7,7 @@ return (
     <div>
         <div>
             <h1>QUIZARD</h1>
-            <img src='{wizR}' className='homeImg' alt='homeImg' />
+            <img src={wizR} className='homeImg' alt='homeImg' />
         </div>
     </div>
     )

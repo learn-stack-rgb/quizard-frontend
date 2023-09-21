@@ -6,7 +6,8 @@ import snek from '../assets/snek-404.png'
 const NotFound = () => {
     return (
         <div>
-            <img src='snek' />
+            <img src={snek} />
+            <h1>404 Even braniacs get lost sometimes</h1>
         </div>
     )
 }
