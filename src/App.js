@@ -11,8 +11,8 @@ function App() {
     <>
     <Header />
     <Routes>
-    <Home />
-       <NotFound />
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />
 
