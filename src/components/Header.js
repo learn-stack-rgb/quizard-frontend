@@ -3,7 +3,7 @@ import "./Header.css";
 import { Nav, NavItem } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   return (
     <>
       <Nav>
@@ -15,16 +15,41 @@ const Header = () => {
         <NavItem>
           <NavLink to="/decks">All Decks</NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink to="/login">
-            Login
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/signup">
-            Sign Up
-          </NavLink>
-        </NavItem>
+        {currentUser && (
+          <>
+            <NavItem>
+              <NavLink to="/mydecks">
+                My Decks
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/deck/new">
+                Add Deck
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/">
+                Sign Out
+              </NavLink>
+            </NavItem>
+          </>
+        )}
+
+        {!currentUser && (
+          <>
+            <NavItem>
+              <NavLink to="/login">
+                Login
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/signup">
+                Sign Up
+              </NavLink>
+            </NavItem>
+          </>
+        )}
+
         <NavItem>
           <NavLink to="/aboutus">
             About Us
