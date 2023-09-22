@@ -16,6 +16,8 @@ import SignUp from './pages/SignUp.js'
 import SignIn from './pages/SignIn.js'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
+import DeckEdit from './pages/DeckEdit';
+
 
 
 const App = () => {
@@ -35,6 +37,7 @@ const App = () => {
   const createDeck = () => {
     console.log("createDeck invoked")
   }
+
   const url = 'http://localhost:3000'
   const readDeck = () => {
 
@@ -51,6 +54,9 @@ const App = () => {
     .catch((errors) => console.log('delete errors', errors))
   }
 
+  const updateDeck = (deck, id) => {
+    console.log("update invoked")
+  }
   return (
     <>
       <Header currentUser={currentUser} logout={logout}/>
@@ -64,6 +70,7 @@ const App = () => {
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
             <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
+            <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
         )}
         {!currentUser && (
