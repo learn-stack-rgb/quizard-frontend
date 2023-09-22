@@ -23,7 +23,7 @@ const DeckProtectedIndex = ({ decks, currentUser }) => {
                     Choose
                   </Button>
                 <NavLink />
-                <NavLink>
+                <NavLink to={`/mydecks/${deck.id}/edit`}>
                   <Button>
                     Edit
                   </Button>

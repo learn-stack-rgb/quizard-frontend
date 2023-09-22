@@ -14,6 +14,7 @@ import CardProtectedIndex from './pages/CardProtectedIndex.js'
 import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
 import SignUp from './pages/SignUp.js'
 import SignIn from './pages/SignIn.js'
+import DeckEdit from './pages/DeckEdit';
 
 
 const App = () => {
@@ -33,6 +34,10 @@ const App = () => {
   const createDeck = () => {
     console.log("createDeck invoked")
   }
+
+  const updateDeck = (deck, id) => {
+    console.log("update invoked")
+  }
   return (
     <>
       <Header currentUser={currentUser} logout={logout}/>
@@ -46,6 +51,7 @@ const App = () => {
             <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
             <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
+            <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
         )}
         {!currentUser && (
