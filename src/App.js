@@ -15,7 +15,6 @@ import CardIndex from './pages/CardIndex';
 function App() {
   const [decks, setDecks] = useState(mockDecks)
   const [cards, setCards] = useState(mockCards)
-  console.log(decks)
   return (
     <>
     <Header />
