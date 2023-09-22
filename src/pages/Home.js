@@ -1,14 +1,13 @@
 import React from 'react';
 import './Home.css'
-import wizR from '../assets/Wiz-liz-RGB.png'
-
+import wizR from '../assets/WizLizRGB.png'
 const Home = () => {
 return (
-    <div>
-        <div>
-            <h1>QUIZARD</h1>
-            <img src={wizR} className='homeImg' alt='homeImg' />
-        </div>
+     <div className='home-container'>
+       <div className='header'>
+         <h1>QUIZARD</h1>
+       </div>
+        <img src={wizR} className='homeImg' alt='homeImg' />
     </div>
     )
 }
