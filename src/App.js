@@ -14,6 +14,8 @@ import CardProtectedIndex from './pages/CardProtectedIndex.js'
 import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
 import SignUp from './pages/SignUp.js'
 import SignIn from './pages/SignIn.js'
+import DeckIndex from './pages/DeckIndex'
+import CardIndex from './pages/CardIndex'
 
 
 const App = () => {
@@ -33,6 +35,22 @@ const App = () => {
   const createDeck = () => {
     console.log("createDeck invoked")
   }
+  const url = 'http://localhost:3000'
+  const readDeck = () => {
+
+  }
+  const deleteDeck = (id) => {
+    fetch(`${url}/decks/${id}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'DELETE'
+    })
+    .then((response) => response.json())
+    .then(() => readDeck())
+    .catch((errors) => console.log('delete errors', errors))
+  }
+
   return (
     <>
       <Header currentUser={currentUser} logout={logout}/>
@@ -43,7 +61,7 @@ const App = () => {
         <Route path="/decks/:deckId" element={<CardIndex cards={cards}/>} />
         {currentUser && (
           <>
-            <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
+            <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
             <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
           </>
