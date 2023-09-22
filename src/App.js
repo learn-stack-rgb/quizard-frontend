@@ -6,6 +6,7 @@ import {Route, Routes} from 'react-router-dom'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import DeckNew from './pages/DeckNew'
+import CardNew from './pages/CardNew';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/decknew" element={<DeckNew />} />
+      <Route path="/cardnew" element={<CardNew />} />
     </Routes>
     <Footer />
 
