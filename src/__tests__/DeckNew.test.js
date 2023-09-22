@@ -13,7 +13,6 @@ describe("<DeckNew />", () => {
     })
   
     it("renders the Deck New page", () => {
-      screen.logTestingPlaygroundURL()
       const element = screen.getByText("Add A New Deck")
       expect(element).toBeInTheDocument()
     })
