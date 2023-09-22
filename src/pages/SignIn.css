@@ -1,0 +1,57 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 90vh;
+  padding-top: 20px;
+
+  > img {
+    height: 20vh;
+  }
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  border: 6px solid var(--secondary-color);
+  border-radius: 25px;
+  width: 220px;
+  height: 300px;
+  padding: 20px;
+  background-color: var(--card-front);
+
+  > .submit-button {
+    margin-top: 10px;
+    width: 50%;
+    align-self: center;
+    color: black;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    &:hover{
+      color: white;
+      cursor: pointer;
+      box-shadow: 1px 1px 5px var(--primary-color);
+    }
+  }
+  > label {
+    background-color: var(--card-front);
+    color: white;
+    font-weight: 500;
+  }
+  > span {
+    margin-top: 15px;
+    background-color: var(--card-front);
+    color: white;
+  }
+
+}
+
+.sign-up{
+  color: blue;
+  background-color: var(--card-front);
+  &:hover{
+    color: white;
+    cursor: pointer;
+  }
+}

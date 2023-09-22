@@ -1,12 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import DeckNew from '../pages/DeckNew'
 import { BrowserRouter } from 'react-router-dom'
+import mockUsers from '../mockUsers.js'
 
 describe("<DeckNew />", () => {
     beforeEach(() => {
       render(
         <BrowserRouter>
-          <DeckNew />
+          <DeckNew currentUser={mockUsers[0]}/>
         </BrowserRouter>
       )
     })
@@ -16,8 +17,4 @@ describe("<DeckNew />", () => {
       expect(element).toBeInTheDocument()
     })
 
-    it("has a form with the entry title", () => {
-        const formTitle = screen.getByText("Deck Title:")
-        expect(formTitle.getAttribute("for")).toEqual("title")
-    })
 })

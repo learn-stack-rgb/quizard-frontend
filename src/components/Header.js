@@ -3,60 +3,82 @@ import "./Header.css";
 import { Nav, NavItem } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, logout }) => {
   return (
-    <>
-      <Nav>
-        <NavItem>
-          <NavLink to="/" >
-            Home Page
+    
+      <Nav className='nav-container'>
+        
+        <div className="nav-item-container">
+          <NavItem className='nav-item'>
+            <NavLink to="/" >
+              Home Page
+            </NavLink>
+          </NavItem>
+        </div>
+        <div className="nav-item-container">
+        <NavItem className='nav-item'>
+          <NavLink to="/decks">
+            All Decks
           </NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink to="/decks">All Decks</NavLink>
-        </NavItem>
+        </div>
+
         {currentUser && (
           <>
-            <NavItem>
+            <div className="nav-item-container">
+            <NavItem className='nav-item'>
               <NavLink to="/mydecks">
                 My Decks
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink to="/deck/new">
+            </div>
+
+            <div className="nav-item-container">
+            <NavItem className='nav-item'>
+              <NavLink to="/decknew">
                 Add Deck
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink to="/">
+            </div>
+
+            <div className="nav-item-container">
+            <NavItem className='nav-item'>
+              <NavLink to="/" onClick={logout}>
                 Sign Out
               </NavLink>
             </NavItem>
+            </div>
           </>
         )}
 
         {!currentUser && (
           <>
-            <NavItem>
+            <div className="nav-item-container">
+            <NavItem className='nav-item'>
               <NavLink to="/login">
                 Login
               </NavLink>
             </NavItem>
-            <NavItem>
+            </div>
+
+            <div className="nav-item-container">
+            <NavItem className='nav-item'>
               <NavLink to="/signup">
                 Sign Up
               </NavLink>
             </NavItem>
+            </div>
           </>
         )}
-
-        <NavItem>
+        <div className="nav-item-container">
+        <NavItem className='nav-item'>
           <NavLink to="/aboutus">
             About Us
           </NavLink>
         </NavItem>
+        </div>
       </Nav>
-    </>
+    
   );
 };
 
