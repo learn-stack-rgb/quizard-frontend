@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import DeckNew from './pages/DeckNew'
+import CardNew from './pages/CardNew';
 import mockCards from './mockCards.js'
 import mockDecks from './mockDecks.js'
 import mockUsers from './mockUsers.js'
@@ -21,19 +22,19 @@ const App = () => {
   return (
     <>
       <Header currentUser={currentUser}/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/decknew" element={<DeckNew />} />
-        {currentUser && (
-          <>
-            <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
-
-            <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
-          </>
-        )}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/decknew" element={<DeckNew />} />
+          {currentUser && (
+            <>
+              <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
+              <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
+              <Route path="/cardnew" element={<CardNew />} />
+            </>
+          )}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
     </>
   );
 }
