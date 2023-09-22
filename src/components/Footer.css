@@ -1,0 +1,15 @@
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  > p {
+    margin-top: 16px;
+    margin-right: 8px;
+  }
+  > img {
+    display: inline;
+    width: 150px;
+    height: 100%;
+  }
+}
+

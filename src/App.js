@@ -11,19 +11,34 @@ import mockDecks from './mockDecks.js'
 import mockUsers from './mockUsers.js'
 import CardProtectedIndex from './pages/CardProtectedIndex.js'
 import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
+import SignUp from './pages/SignUp.js'
+import SignIn from './pages/SignIn.js'
+
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [currentUser, setCurrentUser] = useState(null)
   const [decks, setDecks] = useState(mockDecks)
   const [cards, setCards] = useState(mockCards)
 
-  
+  const login = (userInfo) => {
+    console.log("login invoked")
+    setCurrentUser(mockUsers[0])
+  }
+
+  const logout = () => {
+    setCurrentUser(null)
+  }
+
+  const createDeck = () => {
+    console.log("createDeck invoked")
+  }
   return (
     <>
-      <Header currentUser={currentUser}/>
+      <Header currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/decknew" element={<DeckNew />} />
+        <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
+
         {currentUser && (
           <>
             <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
@@ -31,6 +46,14 @@ const App = () => {
             <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
           </>
         )}
+
+        {!currentUser && (
+          <>
+            <Route path="/login" element={<SignIn login={login}/>} />
+            <Route path="/signup" element={<SignUp />} />
+          </>
+        )}
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
