@@ -2,8 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom"
 import { CardGroup,Card,CardBody,CardTitle,Button} from "reactstrap";
 import './Deckindex.css' 
+import { useParams } from "react-router-dom";
+
 
 const DeckIndex = ({ decks }) => {
+  const {deckId} = useParams()
   return (
     <CardGroup>
       {decks.map((deck) => (
@@ -21,4 +24,4 @@ const DeckIndex = ({ decks }) => {
   )
 }
 
-export default DeckIndex;
+export default DeckIndex

@@ -30,7 +30,7 @@ const CardProtectedIndex = ({ decks, cards }) => {
                 <CardText>
                   {card.answer}
                 </CardText>
-                <NavLink>
+                <NavLink >
                   <Button>
                     Edit
                   </Button>
