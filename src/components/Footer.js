@@ -5,9 +5,10 @@ import rgb from '../assets/stack-rgb.png'
 const Footer = () => {
     return(
         <>
-        <div>
+        <div className='footer-container'>
             <p>2023 Quizard</p>
-            <p>Brought to you by </p><img src={rgb} />
+            <p>Brought to you by </p>
+            <img src={rgb} />
         </div>
         </>
     )

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import './CardIndex.css' 
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap"
 import { useParams } from "react-router-dom";
@@ -32,4 +32,9 @@ export default CardIndex;
 
 
 
+const CardIndex = () => {
+  return (
+    <div>CardIndex</div>
+  )
+}
 
