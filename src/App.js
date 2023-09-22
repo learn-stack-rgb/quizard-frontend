@@ -39,6 +39,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
+        <Route path="/decks" element={<DeckIndex decks={decks}/>} />
+        <Route path="/decks/:deckId" element={<CardIndex cards={cards}/>} />
         {currentUser && (
           <>
             <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
@@ -56,7 +58,7 @@ const App = () => {
       </Routes>
       <Footer />
     </>
-  );
+  )
 }
 
 export default App;
