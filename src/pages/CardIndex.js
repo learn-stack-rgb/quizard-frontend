@@ -32,9 +32,3 @@ export default CardIndex;
 
 
 
-const CardIndex = () => {
-  return (
-    <div>CardIndex</div>
-  )
-}
-
