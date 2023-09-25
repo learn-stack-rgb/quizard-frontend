@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+ 	padding: 0;
+  	margin: 0;
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
 	font-family: 'Calligraffitti', cursive;
@@ -14,7 +14,7 @@
 	--light-mode-bg: #f2eede;
 	--light-mode-text: black;
 
-  --dark-mode-bg: rgb(41, 40, 40);
+  	--dark-mode-bg: rgb(41, 40, 40);
 	--dark-mode-text: rgb(139, 133, 133);
 
 	--card-front: #61939E;
@@ -30,11 +30,11 @@
 
 .deck-page-container {
 	height: 90vh;
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  row-gap: 10px;
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	row-gap: 10px;
 	overflow-y: auto;
 }
 
@@ -50,16 +50,16 @@
 }
 
 .deck-container {
-  display: flex;
-  flex-direction: column;
+  	display: flex;
+  	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-  border: 6px solid var(--secondary-color);
-  border-radius: 25px;
-  width: 220px;
-  height: 300px;
-  padding: 20px;
-  background-color: var(--card-front);
+  	border: 6px solid var(--secondary-color);
+  	border-radius: 25px;
+ 	width: 220px;
+  	height: 300px;
+ 	padding: 20px;
+ 	background-color: var(--card-front);
 	margin-bottom: 10%;
 
 
