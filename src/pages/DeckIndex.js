@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './Deckindex.css' 
 import { Button } from "reactstrap";
 import '../App.css' 
 
 const DeckIndex = ({ decks }) => {
-  const {deck_id} = useParams()
   return (
     <div className='deck-page-container'>
       <h2 className='page-title'>All Decks</h2>
