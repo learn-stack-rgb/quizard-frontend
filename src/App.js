@@ -70,12 +70,12 @@ const App = () => {
         <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
         <Route path="/decks" element={<DeckIndex decks={decks}/>} />
         <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards}/>} />
-        <Route path="mydecks/:deck_id/mycards/:card_id/edit" element={<CardEdit cards={cards} updateCard={updateCard} />} />
+        <Route path="mydecks/:deck_id/cardedit/:card_id" element={<CardEdit cards={cards} updateCard={updateCard} />} />
         {currentUser && (
           <>
             <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
-            <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
+            <Route path={`/mydecks/:deck_id/`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
