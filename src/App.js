@@ -15,6 +15,8 @@ import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
 import SignUp from './pages/SignUp.js'
 import SignIn from './pages/SignIn.js'
 import DeckEdit from './pages/DeckEdit';
+import DeckIndex from './pages/DeckIndex.js';
+import CardIndex from './pages/CardIndex.js'
 
 
 const App = () => {
@@ -44,10 +46,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
-        <Route path="/decks" element={<DeckIndex decks={decks}/>} />
-        <Route path="/decks/:deckId" element={<CardIndex cards={cards}/>} />
+        <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards}/>} />
         {currentUser && (
           <>
+            <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
             <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
