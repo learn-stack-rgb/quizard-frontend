@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import './CardProtectedIndex.css'
-import { Card, CardBody, CardTitle, Button, CardText } from 'reactstrap'
 import { useParams, NavLink } from 'react-router-dom'
 
 const CardProtectedIndex = ({ decks }) => {
@@ -41,8 +40,8 @@ const CardProtectedIndex = ({ decks }) => {
               <br/>
               Answer : {card.answer}
               <div className='card-buttons'>
-                <button>Edit</button>
-                <button id='delete'>Delete</button>
+               <NavLink to="cardedit/:card_id"><button>Edit</button> </NavLink> 
+               <NavLink><button id='delete'>Delete</button></NavLink> 
               </div>
             </div>
           )

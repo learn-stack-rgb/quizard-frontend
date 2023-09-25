@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
+import './Deckindex.css' 
 import { Button } from "reactstrap";
 import '../App.css' 
 
@@ -25,4 +26,4 @@ const DeckIndex = ({ decks }) => {
   )
 }
 
-export default DeckIndex;
+export default DeckIndex
