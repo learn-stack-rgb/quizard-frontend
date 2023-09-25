@@ -1,9 +1,14 @@
 import React from 'react'
 import './DeckProtectedIndex.css'
 import { Button } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
-const DeckProtectedIndex = ({ decks, currentUser }) => {
+
+
+const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
+  let { id } = useParams()
+
+  const selectedDeck = decks?.find((deck) => deck.id === +id)
 
   const myDecks = decks.filter(deck => currentUser?.id === deck.user_id)
 
@@ -31,9 +36,9 @@ const DeckProtectedIndex = ({ decks, currentUser }) => {
                   </Button>
                 </NavLink>
                 <NavLink />
-                <Button className='delete-button'>
-                  Delete
-                </Button>
+                  <Button onClick={() => deleteDeck(selectedDeck?.id)} className='delete-button'>
+                    Delete
+                  </Button>
               </NavLink>
             </div>
           )

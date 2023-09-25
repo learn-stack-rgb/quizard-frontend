@@ -33,4 +33,3 @@ const CardIndex = ({ decks, cards }) => {
 }
 
 export default CardIndex;
-
