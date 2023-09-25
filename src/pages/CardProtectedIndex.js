@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import './CardProtectedIndex.css'
 import { useParams, NavLink } from 'react-router-dom'
 
-const CardProtectedIndex = ({ decks }) => {
+
+const CardProtectedIndex = ({ decks, cards, deleteCard }) => { 
   const { deck_id } = useParams()
   const [currentDeckTitle, setCurrentDeckTitle] = useState()
   const [cards, setCards] = useState([])
@@ -35,13 +36,14 @@ const CardProtectedIndex = ({ decks }) => {
       <h1>{currentDeckTitle}</h1>
         {myCards?.map((card, index) => {
           return (
+  
             <div className='card-content'key={index}>
               Question: {card.question}
               <br/>
               Answer : {card.answer}
               <div className='card-buttons'>
-               <NavLink to="cardedit/:card_id"><button>Edit</button> </NavLink> 
-               <NavLink><button id='delete'>Delete</button></NavLink> 
+               <NavLink to={"cardedit/:card_id"}><button>Edit</button> </NavLink>   
+               <NavLink to={`/mydecks/:deck_id`}> <button id='delete' onClick={() => deleteCard(card.id)}>Delete</button></NavLink>
               </div>
             </div>
           )
@@ -51,4 +53,11 @@ const CardProtectedIndex = ({ decks }) => {
   )
 }
 
-export default CardProtectedIndex
+export default CardProtectedIndex 
+
+
+
+
+
+
+

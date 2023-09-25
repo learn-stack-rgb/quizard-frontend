@@ -117,6 +117,17 @@ const App = () => {
     .catch((errors) => console.log('delete errors', errors))
   }
 
+const deleteCard = (deckId, cardId) => {
+  fetch(`http://localhost:3000/decks/${deckId}/cards/${cardId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => response.json()) 
+  .catch(errors => console.log("delete errors:", errors))
+}
+
   const updateDeck = (deck, id) => {
     console.log("update invoked")
   }
@@ -134,7 +145,7 @@ const App = () => {
           <>
             <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
-            <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
+            <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser} deleteCard={deleteCard}/>} />
             <Route path="/cardnew" element={<CardNew />} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
