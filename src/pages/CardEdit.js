@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams, useNavigate, NavLink } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Form, FormGroup, Label, Input } from 'reactstrap'
 
 const CardEdit = ({ cards, updateCard }) => {
@@ -20,15 +20,11 @@ const CardEdit = ({ cards, updateCard }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     updateCard(editCard, currentCard.id)
-    navigate("/cardindex")
+    navigate("/mydecks/:deck_id")
   }
 
   return (
     <div>
-      <NavLink to={`/cardedit/${currentCard?.id}`} className="nav-link">
-        Edit Card
-      </NavLink>
-
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="Question">Question</Label>
