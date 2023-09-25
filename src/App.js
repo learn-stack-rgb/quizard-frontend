@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Home from './pages/Home'
-import NotFound from './pages/NotFound';
+import NotFound from './pages/NotFound'
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import DeckNew from './pages/DeckNew'
-import CardNew from './pages/CardNew';
+import CardNew from './pages/CardNew'
 import mockCards from './mockCards.js'
 import mockDecks from './mockDecks.js'
 import mockUsers from './mockUsers.js'
@@ -14,17 +14,20 @@ import CardProtectedIndex from './pages/CardProtectedIndex.js'
 import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
 import SignUp from './pages/SignUp.js'
 import SignIn from './pages/SignIn.js'
+import CardEdit from './pages/CardEdit'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
-
-
- 
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
   const [decks, setDecks] = useState([])
   const [cards, setCards] = useState([])
+
+  const updateCard = (updatedCard, cardId) => {
+    const updatedCards = cards.map(card => card.id === cardId ? updatedCard : card)
+    setCards(updatedCards)
+  }
 
   const login = (userInfo) => {
     console.log("login invoked")
@@ -60,7 +63,6 @@ const App = () => {
   const createDeck = () => {
     console.log("createDeck invoked")
   }
-
   const url = 'http://localhost:3000'
   const readDeck = () => {
 
@@ -80,18 +82,21 @@ const App = () => {
   const updateDeck = (deck, id) => {
     console.log("update invoked")
   }
+
   return (
     <>
       <Header currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
+        <Route path="/decks" element={<DeckIndex decks={decks}/>} />
         <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards}/>} />
+        <Route path="cardedit/:card_id" element={<CardEdit cards={cards} updateCard={updateCard} />} />
         {currentUser && (
           <>
             <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
-            <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
+            <Route path={`/mydecks/:deck_id/`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
@@ -109,4 +114,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
