@@ -29,9 +29,9 @@ const SignUp = ({ signup }) => {
         <label>Email</label>
         <input type='email' name='email'placeholder='email'/>
         <label>Password</label>
-        <input type='text' name='password' placeholder='create password'/>
+        <input type='password' name='password' placeholder='create password'/>
         <label>Confirm Password</label>
-        <input type='text' name='password_confirmation' placeholder='confirm password'/>
+        <input type='password' name='password_confirmation' placeholder='confirm password'/>
         <input type='submit' value='Submit' className='submit-button'/>
         <span>Already Have an Account?
         <a href='/login'className='login'>Log In!</a></span>
