@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: row;
   height: 5vh;
-  > p {
-    margin-top: 16px;
-    margin-right: 8px;
+  align-items: end;
+  
+  > a {
+    margin-right: 10px;
   }
   > img {
     display: inline;
     width: 150px;
-    height: 100%;
+    height: max-content;
   }
 }
 

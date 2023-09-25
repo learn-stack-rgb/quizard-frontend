@@ -10,6 +10,9 @@
   
   > h2{
     margin-bottom: 50px;
+    font-weight: 900;
+    font-size: 3rem;
+    text-shadow: 0px 5px 10px salmon;
   }
 }
 
@@ -25,21 +28,31 @@
   justify-content: center;
   row-gap: 10px;
 
-  > .new-button {
+  > .new-buttons {
     margin-top: 10px;
-    align-self: center;
     color: white;
     font-weight: 500;
-    &:hover{
-      color: white;
-      cursor: pointer;
-      box-shadow: 1px 1px 5px var(--primary-color);
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+
+    > .create {
+      &:hover {
+        background-color: green ;
+      }
+    }
+
+    > .cancel {
+      &:hover {
+        background-color: red ;
+      }
     }
   }
 
   > .new-label {
-      background-color: var(--card-front);
+      background-color: transparent;
       color: white;
-      font-weight: 500;
+      font-weight: 900;
+      font-size: 2rem;
   }
 }
