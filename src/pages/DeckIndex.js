@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
-import './Deckindex.css' 
+import './DeckIndex.css' 
 import { Button } from "reactstrap";
 import '../App.css' 
 

@@ -28,7 +28,7 @@ const SignIn = ({ login }) => {
         <label>Email</label>
         <input type='email' name='email' placeholder='email'/>
         <label>Password</label>
-        <input type='text' name='password' placeholder='enter password'/>
+        <input type='password' name='password' placeholder='enter password'/>
         <input className='submit-button' type='submit' value='Submit' />
         <span>No Quizard Account?
         <a href='/signup' className='sign-up'>Register Now</a></span>
