@@ -35,10 +35,11 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
                     Edit
                   </Button>
                 </NavLink>
-                <NavLink />
-                  <Button onClick={() => deleteDeck(selectedDeck?.id)} className='delete-button'>
+                <NavLink to={"/"}>
+                  <Button onClick={() => deleteDeck(deck.id)} className='delete-button'>
                     Delete
                   </Button>
+                </NavLink>
               </NavLink>
             </div>
           )
