@@ -7,8 +7,8 @@ import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import DeckNew from './pages/DeckNew'
 import CardNew from './pages/CardNew';
-import mockCards from './mockCards.js'
-import mockDecks from './mockDecks.js'
+// import mockCards from './mockCards.js'
+// import mockDecks from './mockDecks.js'
 import mockUsers from './mockUsers.js'
 import CardProtectedIndex from './pages/CardProtectedIndex.js'
 import DeckProtectedIndex from './pages/DeckProtectedIndex.js'
@@ -17,19 +17,40 @@ import SignIn from './pages/SignIn.js'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
-import DeckIndex from './pages/DeckIndex.js';
-import CardIndex from './pages/CardIndex.js'
 
 
+ 
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
-  const [decks, setDecks] = useState(mockDecks)
-  const [cards, setCards] = useState(mockCards)
+  const [decks, setDecks] = useState([])
+  const [cards, setCards] = useState([])
 
   const login = (userInfo) => {
     console.log("login invoked")
     setCurrentUser(mockUsers[0])
+  }
+
+  const signup = (userInfo) => {
+    fetch('http://localhost:3000/signup', {
+      body: JSON.stringify(userInfo), 
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST",
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText)
+      }
+      localStorage.setItem("token", response.headers.get("Authorization"))
+      return response.json()
+    })
+    .then((payload) => {
+      setCurrentUser(payload)
+    })
+    .catch((error) => console.log("signup errors: ", error))
   }
 
   const logout = () => {
@@ -78,7 +99,7 @@ const App = () => {
         {!currentUser && (
           <>
             <Route path="/login" element={<SignIn login={login}/>} />
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp signup={signup} />} />
           </>
         )}
         <Route path="*" element={<NotFound />} />
