@@ -3,9 +3,10 @@ import './CardIndex.css'
 import { useParams } from "react-router-dom";
 import CardDetails from './CardDetails';
 
-const CardIndex = ({ decks, cards }) => {
+const CardIndex = ({ decks }) => {
   const { deck_id } = useParams()
   const [currentDeckTitle, setCurrentDeckTitle] = useState()
+  const [cards, setCards] = useState([])
 
   useEffect(() => {
     const currentDeck = decks.find(deck => deck.id === parseInt(deck_id))
@@ -13,6 +14,19 @@ const CardIndex = ({ decks, cards }) => {
       setCurrentDeckTitle(currentDeck.title)
     }
   }, [deck_id, decks])
+
+  useEffect(() => {
+    readCard()
+  }, [])
+
+  const readCard = () => {
+    fetch(`http://localhost:3000//decks/${deck_id}/cards`)
+    .then(response => response.json())
+    .then(payload => {
+      setCards(payload)
+    })
+    .catch(error => console.log(error))
+  }
 
   const myCards = cards.filter(card => card.deck_id === parseInt(deck_id))
 

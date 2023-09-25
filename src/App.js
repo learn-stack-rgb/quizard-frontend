@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './pages/Home'
 import NotFound from './pages/NotFound';
 import './App.css';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import DeckNew from './pages/DeckNew'
@@ -17,16 +17,19 @@ import SignIn from './pages/SignIn.js'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
-import DeckIndex from './pages/DeckIndex.js';
-import CardIndex from './pages/CardIndex.js'
+
 
 
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
-  const [decks, setDecks] = useState(mockDecks)
-  const [cards, setCards] = useState(mockCards)
+  const [decks, setDecks] = useState([])
+  const [cards, setCards] = useState([])
 
+  useEffect(() => {
+    readDeck()
+  }, [])
+  
   const login = (userInfo) => {
     console.log("login invoked")
     setCurrentUser(mockUsers[0])
@@ -41,9 +44,16 @@ const App = () => {
   }
 
   const url = 'http://localhost:3000'
-  const readDeck = () => {
 
+  const readDeck = () => {
+    fetch(`${url}/decks`)
+    .then(response => response.json())
+    .then(payload => {
+      setDecks(payload)
+    })
+    .catch(error => console.log(error))
   }
+
   const deleteDeck = (id) => {
     fetch(`${url}/decks/${id}`, {
       headers: {
@@ -59,18 +69,19 @@ const App = () => {
   const updateDeck = (deck, id) => {
     console.log("update invoked")
   }
+
   return (
     <>
       <Header currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
-        <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards}/>} />
+        <Route path="/decks/:deck_id" element={<CardIndex decks={decks} />} />
         {currentUser && (
           <>
             <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
-            <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
+            <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
