@@ -17,8 +17,7 @@ import SignIn from './pages/SignIn.js'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
-import DeckIndex from './pages/DeckIndex.js';
-import CardIndex from './pages/CardIndex.js'
+
 
 
 
