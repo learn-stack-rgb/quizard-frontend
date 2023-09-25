@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import './App.css';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import DeckNew from './pages/DeckNew'
@@ -29,6 +29,10 @@ const App = () => {
     setCards(updatedCards)
   }
 
+  useEffect(() => {
+    readDeck()
+  }, [])
+  
   const login = (userInfo) => {
     console.log("login invoked")
     setCurrentUser(mockUsers[0])
@@ -64,9 +68,16 @@ const App = () => {
     console.log("createDeck invoked")
   }
   const url = 'http://localhost:3000'
-  const readDeck = () => {
 
+  const readDeck = () => {
+    fetch(`${url}/decks`)
+    .then(response => response.json())
+    .then(payload => {
+      setDecks(payload)
+    })
+    .catch(error => console.log(error))
   }
+
   const deleteDeck = (id) => {
     fetch(`${url}/decks/${id}`, {
       headers: {
@@ -96,7 +107,7 @@ const App = () => {
           <>
             <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
-            <Route path={`/mydecks/:deck_id/`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
+            <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
