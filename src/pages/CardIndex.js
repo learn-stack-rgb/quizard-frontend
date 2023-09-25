@@ -1,35 +1,35 @@
-import React from 'react'
-import './CardIndex.css' 
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap"
-import { useParams } from "react-router-dom"
-import { NavLink } from "react-router-dom"
+import React, { useEffect, useState } from 'react'
+import './CardIndex.css'
+import { useParams } from "react-router-dom";
+import CardDetails from './CardDetails';
 
-const CardIndex = ({ cards }) => {
-  const {cardId} = useParams()
-  
+const CardIndex = ({ decks, cards }) => {
+  const { deck_id } = useParams()
+  const [currentDeckTitle, setCurrentDeckTitle] = useState()
+
+  useEffect(() => {
+    const currentDeck = decks.find(deck => deck.id === parseInt(deck_id))
+    if (currentDeck) {
+      setCurrentDeckTitle(currentDeck.title)
+    }
+  }, [deck_id, decks])
+
+  const myCards = cards.filter(card => card.deck_id === parseInt(deck_id))
+
+  const handleClick = () => {
+
+  }
   return (
-    <>
-      {cards.map((card, index) => (
-        <div key={index}>
-          <Card style={{ width: '18rem' }}>
-            <img alt="Sample" src={card.image} /> {/*   */}
-            <CardBody>
-              <CardTitle tag="h5">{card.question}</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6"></CardSubtitle>
-              <CardText></CardText>
-              <NavLink to={`/decks/${card.id}`}>
-                <Button>Button Text</Button> {/*  */}
-              </NavLink>
-            </CardBody>
-          </Card>
-        </div>
+    <div className='deck-page-container'>
+      <h2 className='page-title' style={{textShadow: "0px 5px 10px #4A5D23"}}>
+        {currentDeckTitle}
+      </h2>
+
+      {myCards.map((card, index) => (
+        <CardDetails key={index} card={card} />
       ))}
-    </>
+    </div>
   )
 }
 
-export default CardIndex
-
-
-
-
+export default CardIndex;

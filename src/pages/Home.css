@@ -1,0 +1,24 @@
+.home-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  > .header {
+    margin-top: 30px;
+    text-shadow: 0px 6px 5px var(--pink-lizard);
+
+    > h1 {
+     font-weight: 900;
+     font-size: 4rem;
+    }
+  }
+
+  > img {
+    width: 600px;
+    height: auto;
+    margin-right: 70px;
+  }
+
+}

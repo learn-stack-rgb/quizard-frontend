@@ -6,8 +6,7 @@ const Footer = () => {
     return(
         <>
         <div className='footer-container'>
-            <p>2023 Quizard</p>
-            <p>Brought to you by </p>
+            <a>2023 Quizard brought to you by </a>
             <img src={rgb} />
         </div>
         </>

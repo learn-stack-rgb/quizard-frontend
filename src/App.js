@@ -17,6 +17,8 @@ import SignIn from './pages/SignIn.js'
 import CardEdit from './pages/CardEdit'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
+import DeckEdit from './pages/DeckEdit';
+
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -40,6 +42,25 @@ const App = () => {
   const createDeck = () => {
     console.log("createDeck invoked")
   }
+  const url = 'http://localhost:3000'
+  const readDeck = () => {
+
+  }
+  const deleteDeck = (id) => {
+    fetch(`${url}/decks/${id}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'DELETE'
+    })
+    .then((response) => response.json())
+    .then(() => readDeck())
+    .catch((errors) => console.log('delete errors', errors))
+  }
+
+  const updateDeck = (deck, id) => {
+    console.log("update invoked")
+  }
 
   return (
     <>
@@ -48,13 +69,15 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
         <Route path="/decks" element={<DeckIndex decks={decks}/>} />
-        <Route path="/decks/:deckId/:cardId" element={<CardIndex cards={cards} />} />
-        <Route path="mydecks/cardedit" element={<CardEdit cards={cards} updateCard={updateCard} />} />
+        <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards}/>} />
+        <Route path="mydecks/:deck_id/mycards/:card_id/edit" element={<CardEdit cards={cards} updateCard={updateCard} />} />
         {currentUser && (
           <>
-            <Route path="/mydecks" element={<DeckProtectedIndex decks={decks} currentUser={currentUser} />} />
+            <Route path="/decks" element={<DeckIndex decks={decks}/>} />
+            <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
             <Route path={`/mydecks/:deck_id/mycards`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser}/>} />
             <Route path="/cardnew" element={<CardNew />} />
+            <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
           </>
         )}
         {!currentUser && (

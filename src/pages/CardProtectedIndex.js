@@ -18,31 +18,19 @@ const CardProtectedIndex = ({ decks, cards }) => {
 
   return (
     <>
+      <div className='card-page-container'>
       <h1>{currentDeckTitle}</h1>
-      <div>
         {myCards?.map((card, index) => {
           return (
-            <Card key={index}>
-              <CardBody>
-                <CardTitle>
-                  {card.question}
-                </CardTitle>
-                <CardText>
-                  {card.answer}
-                </CardText>
-                <NavLink >
-                  <Button>
-                    Edit
-                  </Button>
-                </NavLink>
-                <NavLink />
-                <NavLink>
-                  <Button>
-                    Delete
-                  </Button>
-                </NavLink>
-              </CardBody>
-            </Card>
+            <div className='card-content'key={index}>
+              Question: {card.question}
+              <br/>
+              Answer : {card.answer}
+              <div className='card-buttons'>
+                <button>Edit</button>
+                <button id='delete'>Delete</button>
+              </div>
+            </div>
           )
         })}
       </div >

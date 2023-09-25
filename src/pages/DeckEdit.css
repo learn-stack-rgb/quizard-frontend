@@ -1,4 +1,4 @@
-.login-container {
+.edit-container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -6,18 +6,13 @@
   height: 90vh;
   padding-top: 20px;
 
-  > h1 {
-    font-weight: 900;
-    font-size: 4rem;
-    text-shadow: 0px 6px 5px salmon;
-  }
-
   > img {
-    height: 20vh;
+    width: 200px;
+    height: 200px;
   }
 }
 
-.login-card {
+.edit-card {
   display: flex;
   flex-direction: column;
   border: 6px solid var(--secondary-color);
@@ -26,11 +21,19 @@
   height: 300px;
   padding: 20px;
   background-color: var(--card-front);
-  margin-top: 25px;
+  justify-content: center;
 
-  > .submit-button {
+  > label {
+    background-color: var(--card-front);
+    color: white;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  
+  > .edit-button {
     margin-top: 10px;
-    width: 50%;
+    width: 75%;
     align-self: center;
     color: black;
     font-weight: 500;
@@ -41,24 +44,10 @@
       box-shadow: 1px 1px 5px var(--primary-color);
     }
   }
-  > label {
-    background-color: var(--card-front);
-    color: white;
-    font-weight: 500;
-  }
-  > span {
-    margin-top: 15px;
-    background-color: var(--card-front);
-    color: white;
-  }
-
-}
-
-.sign-up{
-  color: blue;
-  background-color: var(--card-front);
-  &:hover{
-    color: white;
-    cursor: pointer;
+  
+  >.cancel-btn {
+    width:max-content;
+    align-self: center;
+    margin-top: 10px;
   }
 }

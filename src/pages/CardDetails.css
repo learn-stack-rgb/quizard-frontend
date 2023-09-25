@@ -1,0 +1,25 @@
+.front, .back {
+  border: 6px solid var(--secondary-color);
+  border-radius: 25px;
+  width: 220px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  text-align: center;
+  &:hover {
+    box-shadow: 10px -10px 20px salmon;
+    cursor: pointer;
+  }
+}
+
+.front {
+  background-color: var(--card-front);
+  color: white;
+}
+
+.back {
+  background-color: var(--card-back);
+  color: black
+}
