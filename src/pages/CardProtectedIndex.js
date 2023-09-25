@@ -3,7 +3,7 @@ import './CardProtectedIndex.css'
 import { Card, CardBody, CardTitle, Button, CardText } from 'reactstrap'
 import { useParams, NavLink } from 'react-router-dom'
 
-const CardProtectedIndex = ({ decks, cards }) => {
+const CardProtectedIndex = ({ decks, cards, deleteCard }) => { 
   const { deck_id } = useParams()
   const [currentDeckTitle, setCurrentDeckTitle] = useState()
 
@@ -22,13 +22,14 @@ const CardProtectedIndex = ({ decks, cards }) => {
       <h1>{currentDeckTitle}</h1>
         {myCards?.map((card, index) => {
           return (
+  
             <div className='card-content'key={index}>
               Question: {card.question}
               <br/>
               Answer : {card.answer}
               <div className='card-buttons'>
-                <button>Edit</button>
-                <button id='delete'>Delete</button>
+                <NavLink to={"cardedit/:card_id"}><button>Edit</button> </NavLink>
+                <NavLink to={`/mydecks/:deck_id`}> <button id='delete' onClick={() => deleteCard(card.id)}>Delete</button></NavLink>
               </div>
             </div>
           )
@@ -38,4 +39,11 @@ const CardProtectedIndex = ({ decks, cards }) => {
   )
 }
 
-export default CardProtectedIndex
+export default CardProtectedIndex 
+
+
+
+
+
+
+
