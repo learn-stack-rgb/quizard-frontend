@@ -1,0 +1,38 @@
+.divAll {
+    height: 90vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h3, h4, p {
+    background-color: transparent;
+}
+
+span {
+    background-color: transparent;
+}
+
+.divR, .divG, .divB {
+    height: auto;
+    width: 500px;
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+}
+
+.imgG, .imgG2 {
+    width: 180px;
+    height: 250px;
+    background-color: transparent;
+}

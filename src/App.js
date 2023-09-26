@@ -15,6 +15,7 @@ import CardEdit from './pages/CardEdit'
 import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
+import AboutUs from './pages/AboutUs'
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -187,6 +188,7 @@ const App = () => {
             <Route path="/signup" element={<SignUp signup={signup} />} />
           </>
         )}
+        <Route path="aboutus" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
