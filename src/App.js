@@ -127,7 +127,7 @@ const App = () => {
   }
 
   const readCard = (deck_id) => {
-    fetch(`http://localhost:3000//decks/${deck_id}/cards`)
+    fetch(`http://localhost:3000/decks/${deck_id}/cards`)
     .then(response => response.json())
     .then(payload => {
       setCards(payload)
