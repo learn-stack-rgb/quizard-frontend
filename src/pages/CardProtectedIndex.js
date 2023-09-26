@@ -3,30 +3,17 @@ import './CardProtectedIndex.css'
 import { useParams, NavLink } from 'react-router-dom'
 
 
-const CardProtectedIndex = ({ decks, deleteCard }) => { 
+const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => { 
   const { deck_id } = useParams()
   const [currentDeckTitle, setCurrentDeckTitle] = useState()
-  const [cards, setCards] = useState([])
 
   useEffect(() => {
     const currentDeck = decks.find(deck => deck.id === parseInt(deck_id))
     if (currentDeck) {
       setCurrentDeckTitle(currentDeck.title)
     }
+    readCard(deck_id)
   }, [deck_id, decks])
-
-  useEffect(() => {
-    readCard()
-  }, [])
-
-  const readCard = () => {
-    fetch(`http://localhost:3000//decks/${deck_id}/cards`)
-    .then(response => response.json())
-    .then(payload => {
-      setCards(payload)
-    })
-    .catch(error => console.log(error))
-  }
   
   const myCards = cards.filter(card => card.deck_id === parseInt(deck_id))
 

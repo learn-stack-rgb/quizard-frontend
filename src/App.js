@@ -126,6 +126,15 @@ const App = () => {
     .catch(error => console.log(error))
   }
 
+  const readCard = (deck_id) => {
+    fetch(`http://localhost:3000//decks/${deck_id}/cards`)
+    .then(response => response.json())
+    .then(payload => {
+      setCards(payload)
+    })
+    .catch(error => console.log(error))
+  }
+
   const deleteDeck = (id) => {
     fetch(`${url}/decks/${id}`, {
       headers: {
@@ -146,6 +155,7 @@ const App = () => {
     }
   })
   .then(response => response.json())
+  .then(() => readCard(deck_id))
   .catch(errors => console.log("delete errors:", errors))
 }
 
@@ -159,13 +169,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/decks" element={<DeckIndex decks={decks}/>} />
-        <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards}/>} />
+        <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards} readCard={readCard}/>} />
         <Route path="/cardedit/:card_id" element={<CardEdit cards={cards} updateCard={updateCard} />} />
         {currentUser && (
           <>
             <Route path="/decks" element={<DeckIndex decks={decks}/>} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
-            <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser} deleteCard={deleteCard}/>} />
+            <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser} readCard={readCard} deleteCard={deleteCard}/>} />
             <Route path="/decknew" element={<DeckNew createDeck={createDeck} currentUser={currentUser}/>} />
             <Route path="/mydecks/:deck_id/cardnew" element={<CardNew createCard={createCard} decks={decks}/>} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck}/>} />
