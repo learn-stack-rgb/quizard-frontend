@@ -105,7 +105,6 @@ const App = () => {
   }
 
   const createCard = (newCard, deck_id) => {
-    console.log(`sending to ${url}/decks/${deck_id}/cards`, newCard)
     fetch(`${url}/decks/${deck_id}/cards`, {
       body: JSON.stringify(newCard),
       headers: {
@@ -139,14 +138,14 @@ const App = () => {
     .catch((errors) => console.log('delete errors', errors))
   }
 
-const deleteCard = (deckId, cardId) => {
-  fetch(`http://localhost:3000/decks/${deckId}/cards/${cardId}`, {
+  const deleteCard = (deck_id, card_id) => {
+    fetch(`${url}/decks/${deck_id}/cards/${card_id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json"
     }
   })
-  .then(response => response.json()) 
+  .then(response => response.json())
   .catch(errors => console.log("delete errors:", errors))
 }
 

@@ -44,7 +44,7 @@ const CardProtectedIndex = ({ decks, deleteCard }) => {
               Answer : {card.answer}
               <div className='card-buttons'>
                <NavLink to={`/cardedit/${card.id}`}><button>Edit</button> </NavLink>   
-               <NavLink to={`/mydecks/${deck_id}`}> <button id='delete' onClick={() => deleteCard(card.id)}>Delete</button></NavLink>
+               <NavLink to={`/mydecks/${deck_id}`}> <button id='delete' onClick={() => deleteCard(deck_id, card.id)}>Delete</button></NavLink>
               </div>
             </div>
           )
