@@ -29,7 +29,8 @@ const App = () => {
     }
   }, [])
 
-  const url = 'http://localhost:3000'
+  // const url = 'http://localhost:3000'
+  const url = 'https://quizard-backend.onrender.com'
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {
@@ -55,7 +56,7 @@ const App = () => {
   }
 
   const signup = (userInfo) => {
-    fetch('http://localhost:3000/signup', {
+    fetch(`${url}/signup`, {
       body: JSON.stringify(userInfo),
       headers: {
         "Content-Type": "application/json",
@@ -127,7 +128,7 @@ const App = () => {
   }
 
   const readCard = (deck_id) => {
-    fetch(`http://localhost:3000/decks/${deck_id}/cards`)
+    fetch(`${url}/decks/${deck_id}/cards`)
       .then(response => response.json())
       .then(payload => {
         setCards(payload)
