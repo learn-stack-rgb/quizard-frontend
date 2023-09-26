@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Form, FormGroup, Label, Input } from 'reactstrap'
+import editLiz from '../assets/edit-card-liz.png'
 
-const CardEdit = ({ cards, updateCard }) => {
-  const { id } = useParams()
-  let currentCard = cards?.find((card) => card.id === +id)
+const CardEdit = ({ decks, cards, updateCard }) => {
+  const { card_id, deck_id } = useParams()
+  const navigate = useNavigate()
+
+  let currentCard = cards?.find((card) => card.id === +card_id)
 
   const [editCard, setEditCard] = useState({
     question: currentCard?.question,
@@ -15,37 +17,32 @@ const CardEdit = ({ cards, updateCard }) => {
     setEditCard({ ...editCard, [e.target.name]: e.target.value })
   }
 
-  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    updateCard(editCard, currentCard.id)
-    navigate("/mydecks/:deck_id")
+    updateCard(editCard, deck_id, card_id )
+    navigate(`/mydecks/${deck_id}`)
+  }
+
+  const handleCancel = () => {
+    console.log(deck_id)
   }
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label for="Question">Question</Label>
-          <Input
-            id="question"
-            name="question"
-            defaultValue={editCard.question}
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="answer">Answer</Label>
-          <Input
-            id="answer"
-            name="answer"
-            defaultValue={editCard.answer}
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <button type="submit">Submit</button>
-      </Form>
+      <h1>Edit Card</h1>
+      <img alt="wiz-liz-edit" src={editLiz} />
+      <form className='edit-card' onSubmit={handleSubmit}>
+        <label>Question</label>
+        <input type='text' name='question' value={editCard.question} onChange={handleChange} />
+
+        <label>Answer</label>
+        <input type='text' name='answer' value={editCard.answer} onChange={handleChange} />
+
+        <input type='submit' value='Submit Change' className='edit-button' />
+        
+        <button onClick={handleCancel}className='cancel-btn'>Cancel</button>
+      </form>
     </div>
   )
 }

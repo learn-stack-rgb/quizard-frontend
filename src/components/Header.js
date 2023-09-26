@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 const Header = ({ currentUser, logout }) => {
   return (
-
     <Nav className='nav-container'>
 
       <div className="nav-item-container">
@@ -43,7 +42,7 @@ const Header = ({ currentUser, logout }) => {
 
           <div className="nav-item-container">
             <NavItem className='nav-item'>
-              <NavLink to="/" onClick={logout}>
+              <NavLink to="/" onClick={() => logout()}>
                 Sign Out
               </NavLink>
             </NavItem>
