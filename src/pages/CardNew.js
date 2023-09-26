@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { Form, Input, Label, Button, FormGroup } from 'reactstrap'
-import { useNavigate } from 'react-router-dom' 
+import { Form, Input, Label, NavLink , FormGroup } from 'reactstrap'
+import { useNavigate, useParams } from 'react-router-dom'
 import './CardNew.css'
 
-const CardNew = ({createCard, deck}) => {
-
+const CardNew = ({ createCard, decks }) => {
+    const {deck_id} = useParams()
     const navigate = useNavigate()
     const [newCard, setNewCard] = useState({
         question: '',
         answer: '',
-        // deck_id: deck.id || TODO Uncomm
+        deck_id: deck_id,
     })
 
     const handleChange = (e) => {
@@ -17,8 +17,12 @@ const CardNew = ({createCard, deck}) => {
     }
 
     const handleSubmit = () => {
-        createCard(newCard)
-        navigate('/mycards')
+        createCard(newCard, deck_id)
+        navigate(`/mydecks/${deck_id}`)
+    }
+
+    const handleCancel = () => {
+        navigate(`/mydecks/${deck_id}`)
     }
 
     return (
@@ -32,19 +36,19 @@ const CardNew = ({createCard, deck}) => {
                     Question:
                 </Label>
                 <Input id='question' name='question' placeholder='Enter a question' type='text' onChange={handleChange} value={newCard.question} />
-            </FormGroup>
 
-            <FormGroup>
                 <Label for='answer'>
                     Answer:
                 </Label>
                 <Input id='answer' name='answer' placeholder='Enter the answer' type='text' onChange={handleChange} value={newCard.answer} />
+                <button onClick={handleSubmit}>Submit</button>
+                <button onClick={handleCancel}>Cancel</button>
             </FormGroup>
         </Form>
     )
 
 }
-   
+
 
 export default CardNew
 

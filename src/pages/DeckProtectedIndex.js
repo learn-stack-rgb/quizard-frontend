@@ -24,22 +24,24 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
                 <Button>
                   View Deck
                 </Button>
-                <NavLink />
-                <NavLink>
+              </NavLink>
+
+              <NavLink>
                   <Button>
                     Quiz
                   </Button>
-                </NavLink>
-                <NavLink to={`/mydecks/${deck.id}/edit`}>
+              </NavLink>
+
+              <NavLink to={`/mydecks/${deck.id}/edit`}>
                   <Button>
                     Edit
                   </Button>
-                </NavLink>
-                <NavLink to={"/"}>
+              </NavLink>
+              
+              <NavLink to={"/"}>
                   <Button onClick={() => deleteDeck(deck.id)} className='delete-button'>
                     Delete
                   </Button>
-                </NavLink>
               </NavLink>
             </div>
           )
