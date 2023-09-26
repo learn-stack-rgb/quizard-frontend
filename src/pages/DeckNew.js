@@ -32,7 +32,7 @@ const DeckNew = ({ createDeck, currentUser }) => {
                 <Input id='title' name='title' placeholder='Deck title' type='text' onChange={handleChange} value={newDeck.title} />
                 <div className='new-buttons'>
                     <Button onClick={handleSubmit} name='submit' className='create' >Create!</Button>
-                    <Button className='cancel' onClick={handleClick}>Cancel</Button>
+                    <Button className='cancel'onClick={handleClick}>Cancel</Button>
                 </div>
             </FormGroup>
         </Form>

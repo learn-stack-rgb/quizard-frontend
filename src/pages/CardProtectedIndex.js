@@ -3,7 +3,7 @@ import './CardProtectedIndex.css'
 import { useParams, NavLink } from 'react-router-dom'
 
 
-const CardProtectedIndex = ({ decks, cards, deleteCard }) => { 
+const CardProtectedIndex = ({ decks, deleteCard }) => { 
   const { deck_id } = useParams()
   const [currentDeckTitle, setCurrentDeckTitle] = useState()
   const [cards, setCards] = useState([])
@@ -34,6 +34,7 @@ const CardProtectedIndex = ({ decks, cards, deleteCard }) => {
     <>
       <div className='card-page-container'>
       <h1>{currentDeckTitle}</h1>
+      <NavLink to={`/mydecks/${deck_id}/cardnew`}><button>Create Card</button></NavLink>
         {myCards?.map((card, index) => {
           return (
   
@@ -42,8 +43,8 @@ const CardProtectedIndex = ({ decks, cards, deleteCard }) => {
               <br/>
               Answer : {card.answer}
               <div className='card-buttons'>
-               <NavLink to={"cardedit/:card_id"}><button>Edit</button> </NavLink>   
-               <NavLink to={`/mydecks/:deck_id`}> <button id='delete' onClick={() => deleteCard(card.id)}>Delete</button></NavLink>
+               <NavLink to={`/cardedit/${card.id}`}><button>Edit</button> </NavLink>   
+               <NavLink to={`/mydecks/${deck_id}`}> <button id='delete' onClick={() => deleteCard(card.id)}>Delete</button></NavLink>
               </div>
             </div>
           )
