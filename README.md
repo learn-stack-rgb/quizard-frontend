@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+#Introduction:
+Quizard originated from a casual conversation discussing an app idea. We envisioned an application that would be beneficial for individuals affected by dementia, a condition where at least two brain functions, such as memory and judgment, are impaired. With further research, we realized the potential benefits of flashcards, which include enhancing memory recall and facilitating active learning. Quizard aims to quench the thirst for knowledge for students and lifelong learners alike by providing an organized platform to create digital flashcards.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Features:
+Digital Flashcards: Say goodbye to messy and disorganized paper flashcards. With Quizard, create a deck, and add, edit, or delete cards as you see fit.
 
-## Available Scripts
+Animated Cards: A simple click animates the cards to flip, enhancing the user's study experience.
+Ad-Free Learning: Unlike other flashcard platforms, Quizard promises an ad-free experience, unlimited cards, and decks—all at no cost.
+User-Friendly: Designed for everyone, with a clean and intuitive interface.
+Account Creation: To unlock the app's full features, users need only sign up with an email and password.
+Screenshots or GIFs:
+Embed visuals here for a quick preview of your app in action.
 
-In the project directory, you can run:
+#Requirements & Installation:
+To make the most out of Quizard, users are required to sign up. The only prerequisites for account creation are an email and password.
 
-### `yarn start`
+For installation, include download links or steps if your app is available on app stores or has an installation process.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#Usage:
+Create an account.
+Begin crafting your deck.
+Add flashcards to the deck.
+Study, edit, or delete cards at your convenience.
+Contribution Guidelines:
+If you're open to contributions, add details here.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `yarn test`
+#Credits:
+Quizard was brought to life by the Stack RGB development team:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Raquel - Design Lead
+Graham - Project Manager
+Bao - Tech Lead
+Third-party libraries or plugins used: List them here if any.
 
-### `yarn build`
+#Contact Information:
+For queries or feedback, please feel free to reach out to us at stackrgb@gmail.com. We are always eager to hear from our users.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#FAQs for Quizard:
+What is Quizard?
+Quizard is an educational platform that allows users to create and study with flashcards.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+How is Quizard different from other flashcard apps?
+One of Quizard's unique features is the implementation of animated card flips, offering users an engaging study experience.
 
-### `yarn eject`
+Is Quizard available on both mobile and desktop?
+Currently, Quizard is only available for desktop use.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+How do the animated card flips work?
+The animated flip cards can be utilized by clicking on the flashcard.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I found a bug in the app. How can I report it?
+Any bugs or technical issues can be reported to stackrgb@gmail.com.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+What's the purpose of requiring an email and password for account creation?
+Requiring an email and password helps personalize your experience and ensures your flashcards are saved and accessible only to you. It also allows us to send you any important updates or notifications related to your Quizard account.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Do I need an active internet connection to use Quizard?
+Yes, an active internet connection is required to use Quizard.
+How is Quizard free?
+Quizard is free because it originated as a school project. We believe in giving back to learners and promoting education, hence we've decided to offer this tool at no cost.
 
-## Learn More
+I have a suggestion for a new feature. How can I share it?
+We value user feedback! Please send any suggestions or ideas to stackrgb@gmail.com.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I'm experiencing technical issues with Quizard. Where can I get support?
+For technical support or any other queries, you can reach out to us at stackrgb@gmail.com.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Will there be ads in the future?
+No, we are committed to keeping Quizard ad-free for an uninterrupted learning experience.
+Feedback and Continuous Improvement:
+Your feedback is invaluable to us. If you encounter any confusion or have suggestions, don't hesitate to share. We believe in continuously enhancing Quizard for our users.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
