@@ -28,7 +28,7 @@ const DeckNew = ({ createDeck, currentUser }) => {
     return (
         <Form className='new-container'>
             <h2>Add A New Deck</h2>
-            <img className='deckCreateImg' src={DeckCreate} />
+            <img className='deck-create-img' src={DeckCreate} />
             <FormGroup className='new-card'>
                 <Label for='title' className='new-label'>Title of Deck</Label>
                 <Input id='title' name='title' placeholder='Deck title' type='text' onChange={handleChange} value={newDeck.title} />

@@ -16,9 +16,9 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
   return (
     <>
       <div className='deck-page-container'>
-        <span className='protecDeckSpan'>
+        <span className='protect-deck-span'>
         <h2 className='page-title'>My Decks</h2>
-        <img className='protecLizDeck' src={protecLizDeck} />
+        <img className='protect-liz-deck' src={protecLizDeck} />
         </span>
         {myDecks?.map((deck, index) => {
           return (

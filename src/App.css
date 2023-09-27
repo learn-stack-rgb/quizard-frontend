@@ -91,12 +91,12 @@
 	background-color: rgb(177, 47, 47);
 }
 
-.deckIndexImg {
+.deck-index-img {
 	width: 350px;
 	height: auto;
 }
 
-.dkIndexSpan {
+.deck-index-span {
 	width: 100%;
 	display: flex;
 	flex-direction: column;

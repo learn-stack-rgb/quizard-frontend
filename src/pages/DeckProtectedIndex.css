@@ -8,13 +8,13 @@
   
 }
 
-.protecLizDeck {
+.protect-liz-deck {
   height: auto;
   width: 250px;
   margin-top: 8px;
 }
 
-.protecDeckSpan {
+.protect-deck-span {
   display: flex;
   flex-direction: column;
   margin-right: auto;

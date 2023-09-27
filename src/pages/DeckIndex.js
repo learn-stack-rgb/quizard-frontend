@@ -7,9 +7,9 @@ import '../App.css'
 const DeckIndex = ({ decks }) => {
   return (
     <div className='deck-page-container'>
-      <span className="dkIndexSpan">
+      <span className="deck-index-span">
       <h2 className='page-title'>All Decks</h2>
-      <img className="deckIndexImg" src={deckIndexImg} />
+      <img className="deck-index-img" src={deckIndexImg} />
       </span>
       {decks.map((deck, index) => (
         <div className='deck-container' key={index}>

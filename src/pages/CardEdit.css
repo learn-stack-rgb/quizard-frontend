@@ -1,4 +1,4 @@
-.CardEditDiv {
+.card-edit-div {
     text-align: center;
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
     }
 }
 
-.editLiz {
+.edit-liz {
     width: 200px;
     height: 200px;
 }

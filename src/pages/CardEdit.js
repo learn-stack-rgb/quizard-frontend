@@ -30,9 +30,9 @@ const CardEdit = ({ decks, cards, updateCard }) => {
   }
 
   return (
-    <div className='CardEditDiv'>
+    <div className='card-edit-div'>
       <h1>Edit Card</h1>
-      <img className='editLiz' alt="wiz-liz-edit" src={editLiz} />
+      <img className='edit-liz' alt="wiz-liz-edit" src={editLiz} />
       <form className='edit-card' onSubmit={handleSubmit}>
         <label>Question</label>
         <input type='text' name='question' value={editCard.question} onChange={handleChange} />
