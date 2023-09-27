@@ -211,7 +211,7 @@ const App = () => {
             <Route path="/signup" element={<SignUp signup={signup} />} />
           </>
         )}
-        <Route path="aboutus" element={<AboutUs />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

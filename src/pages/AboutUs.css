@@ -5,34 +5,65 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-h1 {
+.h11 {
     width: 100%;
     font-size: 40px;
     font-weight: 600;
 }
 
-h3, h4, p {
+.h33, .h44 {
+    background-color: transparent;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+p {
     background-color: transparent;
 }
 
 span {
     background-color: transparent;
+    display: flex;
+    justify-content: space-around;
 }
 
 .divR, .divG, .divB {
     height: auto;
-    width: 500px;
+    width: 675px;
     display: flex;
     background-color: transparent;
     flex-direction: column;
+    padding: 5px;
+    box-shadow: rgb(141, 123, 63, 0.5) 3px 3px 6px 0px inset, rgba(150, 132, 69, 0.5) -3px -3px 6px 1px inset;
 }
 
-.imgG, .imgG2 {
-    width: 180px;
+.imgB {
+    width: 200px;
     height: 250px;
     background-color: transparent;
 }
+
+.imgR {
+    width: 225px;
+    height: 225px;
+    background-color: transparent;
+}
+.imgG {
+    width: 175px;
+    height: 250px;
+    background-color: transparent;
+}
+
+.imgG2, .imgR2, .imgB2{
+    width: 250px;
+    height: 250px;
+}
+
+.p1, .p2, .p3 {
+    background-color: transparent;
+    margin-top: 10px;
+}
+
