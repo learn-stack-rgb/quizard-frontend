@@ -1,4 +1,4 @@
-.divAll {
+.div-all-about {
     height: 90vh;
     text-align: center;
     display: flex;
@@ -8,61 +8,76 @@
     background-repeat: no-repeat;
 }
 
-.h11 {
+.about-h1 {
     width: 100%;
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 600;
+    text-shadow: 0px 6px 5px #4A5D23;
 }
 
-.h33, .h44 {
+.h3-r-name, .h3-r-role, .h3-r-location {
     background-color: transparent;
     font-weight: 900;
     margin-top: 5px;
+    text-shadow: 0px 6px 5px salmon;
+}
+.h3-g-name, .h3-g-role, .h3-g-location {
+    background-color: transparent;
+    font-weight: 900;
+    margin-top: 5px;
+    text-shadow: 0px 6px 12px #4A5D23;
+}
+.h3-b-name, .h3-b-role, .h3-b-location {
+    background-color: transparent;
+    font-weight: 900;
+    margin-top: 5px;
+    text-shadow: 0px 6px 5px #61939E;
 }
 
 p {
     background-color: transparent;
 }
 
-span {
+.spanny {
     background-color: transparent;
     display: flex;
     justify-content: space-around;
 }
 
-.divR, .divG, .divB {
+.div-raquel, .div-graham, .div-bao {
     height: auto;
     width: 675px;
     display: flex;
     background-color: transparent;
     flex-direction: column;
+    margin-top: 5px;
     padding: 5px;
     box-shadow: rgb(141, 123, 63, 0.5) 3px 3px 6px 0px inset, rgba(150, 132, 69, 0.5) -3px -3px 6px 1px inset;
 }
 
-.imgB {
+.img-bao {
     width: 200px;
     height: 250px;
     background-color: transparent;
 }
 
-.imgR {
+.img-raquel {
     width: 225px;
     height: 225px;
     background-color: transparent;
 }
-.imgG {
+.img-graham {
     width: 175px;
     height: 250px;
     background-color: transparent;
 }
 
-.imgG2, .imgR2, .imgB2{
+.img-graham-2, .img-raquel-2, .img-bao-2{
     width: 250px;
     height: 250px;
 }
 
-.p1, .p2, .p3 {
+.about-p1, .about-p2, .about-p3 {
     background-color: transparent;
     margin-top: 10px;
 }
