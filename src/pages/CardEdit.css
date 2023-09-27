@@ -1,0 +1,17 @@
+.CardEditDiv {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    >h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        text-shadow: 0px 6px 5px #4A5D23;
+    }
+}
+
+.editLiz {
+    width: 200px;
+    height: 200px;
+}

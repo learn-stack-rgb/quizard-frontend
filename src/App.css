@@ -90,3 +90,15 @@
 .deck-container .delete-button {
 	background-color: rgb(177, 47, 47);
 }
+
+.deckIndexImg {
+	width: 350px;
+	height: auto;
+}
+
+.dkIndexSpan {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

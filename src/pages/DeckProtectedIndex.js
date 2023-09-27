@@ -2,6 +2,7 @@ import React from 'react'
 import './DeckProtectedIndex.css'
 import { Button } from 'reactstrap'
 import { NavLink, useParams } from 'react-router-dom'
+import protecLizDeck from '../assets/wiz-liz-read.png'
 
 
 
@@ -15,7 +16,10 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
   return (
     <>
       <div className='deck-page-container'>
+        <span className='protecDeckSpan'>
         <h2 className='page-title'>My Decks</h2>
+        <img className='protecLizDeck' src={protecLizDeck} />
+        </span>
         {myDecks?.map((deck, index) => {
           return (
             <div className='deck-container' key={index}>

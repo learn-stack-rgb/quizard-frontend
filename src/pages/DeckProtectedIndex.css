@@ -7,3 +7,23 @@
 .card-page-container {
   
 }
+
+.protecLizDeck {
+  height: auto;
+  width: 250px;
+  margin-top: 8px;
+}
+
+.protecDeckSpan {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  align-items: center;
+}
+
+.deck-page-container {
+  display: flex;
+ flex-direction: row;
+}
