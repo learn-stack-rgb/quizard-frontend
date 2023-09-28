@@ -17,9 +17,6 @@ const CardIndex = ({ decks, cards, readCard }) => {
 
   const myCards = cards.filter(card => card.deck_id === parseInt(deck_id))
 
-  const handleClick = () => {
-
-  }
   return (
     <div className='deck-page-container'>
       <h2 className='page-title' style={{textShadow: "0px 5px 10px #4A5D23"}}>

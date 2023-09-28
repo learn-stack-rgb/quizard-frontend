@@ -1,0 +1,116 @@
+.quiz-page-container{
+  height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  position: relative;
+  background-image: url(../assets/quiz-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  > h1 {
+    margin-top: 5px;
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-shadow: 0px 5px 10px var(--blue-lizard);
+    background-color: transparent;
+	  color: var(--secondary-color);
+  }
+
+  > h2 {
+    transform: translateY(-10px);
+    text-shadow: 0px 5px 5px salmon;
+    background-color: transparent;
+    font-weight: 900;
+    color: var(--secondary-color);
+  }
+  > img {
+    width: 190px;
+    height: auto;
+    background-color: transparent;
+  }
+}
+
+.slider-container {
+  box-shadow: 2px 2px 10px black;
+  border-radius: 50px;
+  height: 50vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: none ;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  scroll-snap-type: x mandatory;
+  margin-top: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+}
+
+.quiz-cards {
+  width: 100vw;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  
+}
+
+.quiz-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  
+  > button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 900;
+    font-size: 1.4rem;
+    opacity: .5;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+.correct-btn {
+  background-color: green;
+}
+
+.wrong-btn{
+  background-color: red;
+}
+
+.left-arrow, .right-arrow {
+  border: none;
+  background-color: transparent;
+  pointer-events: all;
+  color: var(--secondary-color);
+  opacity: .8;
+  &:hover {
+    cursor: pointer;
+    color: black;
+    opacity: 9;
+  }
+}
+
+.arrows-container {
+  display: flex;
+  column-gap: 400px;
+  position: absolute;
+  transform: translateY(455px);
+  pointer-events: none;
+}
+
+.indicators-container{
+  display: flex;
+  margin-top: 5px;
+}

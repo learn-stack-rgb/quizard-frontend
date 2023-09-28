@@ -2,10 +2,8 @@
 
 * {
 	box-sizing: border-box;
- 	padding: 0;
-  	margin: 0;
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
+	padding: 0;
+	margin: 0;
 	font-family: 'Calligraffitti', cursive;
 	font-weight: 900;
 }
@@ -14,14 +12,14 @@
 	--light-mode-bg: #f2eede;
 	--light-mode-text: black;
 
-  	--dark-mode-bg: rgb(41, 40, 40);
+	--dark-mode-bg: rgb(41, 40, 40);
 	--dark-mode-text: rgb(139, 133, 133);
 
 	--card-front: #61939E;
 	--card-back: #FEFCAD;
 
 	--primary-color: #E3CA6D;
-	--secondary-color: #6C4F43; 
+	--secondary-color: #6C4F43;
 
 	--pink-lizard: salmon;
 	--green-lizard: #4A5D23;
@@ -39,31 +37,31 @@
 }
 
 .page-title {
-  margin-top: 5%;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 3rem;
+	margin-top: 5%;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	font-weight: 900;
+	font-size: 3rem;
 	text-shadow: 0px 6px 9px var(--blue-lizard);
 
 }
 
 .deck-container {
-  	display: flex;
-  	flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-  	border: 6px solid var(--secondary-color);
-  	border-radius: 25px;
- 	width: 220px;
-  	height: 300px;
- 	padding: 20px;
- 	background-color: var(--card-front);
+	border: 6px solid var(--secondary-color);
+	border-radius: 25px;
+	width: 220px;
+	height: 300px;
+	padding: 20px;
+	background-color: var(--card-front);
 	margin-bottom: 10%;
 
 
-	> a {
+	>a {
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
@@ -76,7 +74,7 @@
 	>a button {
 		border-radius: 1px;
 		flex-grow: 1;
-		
+
 	}
 
 }
@@ -91,6 +89,19 @@
 	background-color: rgb(177, 47, 47);
 }
 
+.footer-container {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+.nav-container {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+h1, h2 {
+	color: var(--secondary-color);
+
 .deck-index-img {
 	width: 350px;
 	height: auto;
@@ -101,4 +112,5 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
 }
