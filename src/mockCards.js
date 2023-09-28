@@ -127,7 +127,8 @@ let mockCards = [
 		question: "What is the Capital of Montana?",
 		answer: "Helena",
 		seen: false,
-		correct: false,
-	},
+		correct: false
+	}
+
 ]
 export default mockCards
