@@ -3,6 +3,7 @@ import "./Header.css";
 import { gsap } from 'gsap'
 import { Nav, NavItem } from "reactstrap";
 import { NavLink, useLocation } from "react-router-dom";
+import lizHouse from '../assets/liz-house-fotor-bg-remover-20230927203955.png'
 
 const Header = ({ currentUser, logout }) => {
   const parent = useRef()
@@ -27,7 +28,7 @@ const Header = ({ currentUser, logout }) => {
       <div className="nav-item-container" >
         <NavItem className='nav-item'>
           <NavLink to="/" >
-            Home Page
+            <img className='liz-house' src={lizHouse} />
           </NavLink>
         </NavItem>
       </div>
@@ -36,14 +37,14 @@ const Header = ({ currentUser, logout }) => {
         <>
           <div className="nav-item-container">
             <NavItem className='nav-item'>
-              <NavLink to="/decks">
+              <NavLink className='nav-link' to="/decks">
                 All Decks
               </NavLink>
             </NavItem>
           </div>
           <div className="nav-item-container">
             <NavItem className='nav-item'>
-              <NavLink to="/mydecks">
+              <NavLink className='nav-link' to="/mydecks">
                 My Decks
               </NavLink>
             </NavItem>
@@ -51,7 +52,7 @@ const Header = ({ currentUser, logout }) => {
 
           <div className="nav-item-container">
             <NavItem className='nav-item'>
-              <NavLink to="/decknew">
+              <NavLink className='nav-link' to="/decknew">
                 Add Deck
               </NavLink>
             </NavItem>
@@ -59,7 +60,7 @@ const Header = ({ currentUser, logout }) => {
 
           <div className="nav-item-container">
             <NavItem className='nav-item'>
-              <NavLink to="/" onClick={() => logout()}>
+              <NavLink className='nav-link' to="/" onClick={() => logout()}>
                 Sign Out
               </NavLink>
             </NavItem>
@@ -71,7 +72,7 @@ const Header = ({ currentUser, logout }) => {
         <>
           <div className="nav-item-container" >
             <NavItem className='nav-item'>
-              <NavLink to="/login">
+              <NavLink className='nav-link' to="/login">
                 Login
               </NavLink>
             </NavItem>
@@ -79,7 +80,7 @@ const Header = ({ currentUser, logout }) => {
 
           <div className="nav-item-container" >
             <NavItem className='nav-item'>
-              <NavLink to="/signup">
+              <NavLink className='nav-link' to="/signup">
                 Sign Up
               </NavLink>
             </NavItem>
@@ -88,7 +89,7 @@ const Header = ({ currentUser, logout }) => {
       )}
       <div className="nav-item-container" >
         <NavItem className='nav-item'>
-          <NavLink to="/aboutus">
+          <NavLink className='nav-link' to="/aboutus">
             About Us
           </NavLink>
         </NavItem>
