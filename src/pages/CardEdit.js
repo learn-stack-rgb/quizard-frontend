@@ -1,6 +1,7 @@
 import React, { useState ,useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import editLiz from '../assets/edit-card-liz.png'
+import './CardEdit.css'
 
 const CardEdit = ({ decks, cards, updateCard }) => {
   const { card_id, deck_id } = useParams()
@@ -29,9 +30,9 @@ const CardEdit = ({ decks, cards, updateCard }) => {
   }
 
   return (
-    <div>
+    <div className='card-edit-div'>
       <h1>Edit Card</h1>
-      <img alt="wiz-liz-edit" src={editLiz} />
+      <img className='edit-liz' alt="wiz-liz-edit" src={editLiz} />
       <form className='edit-card' onSubmit={handleSubmit}>
         <label>Question</label>
         <input type='text' name='question' value={editCard.question} onChange={handleChange} />
@@ -41,7 +42,7 @@ const CardEdit = ({ decks, cards, updateCard }) => {
 
         <input type='submit' value='Submit Change' className='edit-button' />
         
-        <button onClick={handleCancel}className='cancel-btn'>Cancel</button>
+        <button onClick={handleCancel} className='cancel-btn'>Cancel</button>
       </form>
     </div>
   )

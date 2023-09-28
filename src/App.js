@@ -31,6 +31,7 @@ const App = () => {
     }
   }, [])
 
+
   // const url = 'http://localhost:3000'
   const url = 'https://quizard-backend.onrender.com'
 
