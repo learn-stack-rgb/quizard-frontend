@@ -4,7 +4,16 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  background-color: transparent;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  position: relative;
+  > h2 {
+    font-weight: 200;
+    font-size: 2rem;
+    color: black;
+    margin-top: 15px;
+    text-shadow: 0px 0px 5px var(--green-lizard)
+  }
 
   > .header {
     margin-top: 30px;
@@ -15,7 +24,7 @@
 
     > h1 {
       font-weight: 900;
-      font-size: 4rem;
+      font-size: 3.5rem;
       background-color: rgba(255, 255, 255, 0);
     }
 
@@ -23,8 +32,6 @@
       font-weight: 700;
       font-size: 2rem;
       background-color: rgba(255, 255, 255, 0);
-
-
     }
   }
 
@@ -32,7 +39,6 @@
     width: 250px;
     height: auto;
   }
-
 }
 
 .home-btns {
@@ -46,5 +52,45 @@
     border-radius: 10px;
     background-color: white;
     box-shadow: 3px 5px 5px var(--blue-lizard);
+  }
+}
+
+.home-container .step-1-container, .step-2-container, .step-3-container {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+b {
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 10px black;
+}
+
+@media (min-width: 800px) {
+  .home-container {
+    .step-1-container{
+      width: 30%;
+      position: absolute;
+      left: 4%;
+      top: 25%;
+    }
+    .step-2-container {
+      width: 30vw;
+      position: absolute;
+      top: 35%;
+      right: 4%;
+    }
+    .step-3-container{
+      width: 30vw;
+      position: absolute;
+      bottom: 20%;
+      left: 32%;
+    }
+  }
+}
+
+@media (width < 800px) {
+  .home-container{
+    overflow-y: auto;
   }
 }

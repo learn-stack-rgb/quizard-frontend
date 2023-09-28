@@ -17,7 +17,7 @@ const SignUp = ({ signup }) => {
       }
   
       signup(userInfo)
-      navigate("/mydecks")
+      navigate("/")
       e.target.reset()
     }
 
