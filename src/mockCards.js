@@ -119,8 +119,7 @@ let mockCards = [
 		question: "What is the Capital of Louisiana?",
 		answer: "Baton Rouge SIGNUP/LOGIN FOR FULL ACCESS",
 		seen: false,
-		correct: false,
-	},
-
+		correct: false
+	}
 ]
 export default mockCards
