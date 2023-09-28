@@ -12,40 +12,40 @@ import './AboutUs.css'
 const AboutUs = () => {
     
     return(
-        <div className="divAll">
-            <h1 className="h11">Meet Our Team</h1>
-            <div className="divR">
-                <h3 className="h33">Raquel King</h3>
-                <h3 className="h33">Design Lead</h3>
-                <h4 className="h44">Austin, TX</h4>
-                <span>
-                    <img className='imgR' src={imgR} />
-                    <img className='imgR2' src={logLiz} />
+        <div className="div-all-about">
+            <h1 className="about-h1">Meet Our Team</h1>
+            <div className="div-raquel">
+                <h3 className="h3-r-name">Raquel King</h3>
+                <h3 className="h3-r-role">Design Lead</h3>
+                <h4 className="h3-r-location">Austin, TX</h4>
+                <span className="spanny">
+                    <img className='img-raquel' src={imgR} />
+                    <img className='img-raquel-2' src={logLiz} />
                 </span>
                 <p className="p1">A full stack developer and U.S. Navy Veteran, Raquel is an amateur rapper, lover of dogs, and delights in exploring new restaurants. In her downtime, she enjoys watching documentaries. Drawn to software engineering for its creative potential, Raquel believes in diversifying tech and is dedicated to teaching others.</p>
-                <p>A fun fact Raquel knows:  </p>
+                <p>A fun fact Raquel knows: The ice cream cone was invented in New York </p>
             </div>
-            <div className="divG">
-                <h3 className="h33">Graham Blundell</h3>
-                <h3 className="h33">Product Manager & Project Manager</h3>
-                <h4 className="h44">San Diego, CA</h4>
-                <span>
-                    <img className="imgG" src={imgG} />
-                    <img className="imgG2" src={imgG2}/>
+            <div className="div-graham">
+                <h3 className="h3-g-name">Graham Blundell</h3>
+                <h3 className="h3-g-role">Product Manager & Project Manager</h3>
+                <h4 className="h3-g-location">San Diego, CA</h4>
+                <span className="spanny">
+                    <img className="img-graham" src={imgG} />
+                    <img className="img-graham-2" src={imgG2}/>
                 </span>
                 <p className="p2">A full stack web developer with a background in events, finance and insurance. Graham was introduced to coding by a friend and since then, has not looked back. Graham enjoys taking his dogs on adventures, rock climbing and playing a LOT of video games.</p>
-                <p>A fun fact Graham knows:  </p>
+                <p>A fun fact Graham knows: There is a volcano on Mars three times the size of Mt Everest.  </p>
             </div>
-            <div className="divB">
-                <h3 className="h33">Bao Khanh Tran</h3>
-                <h3 className="h33">Tech Lead</h3>
-                <h4 className="h44">San Diego, CA</h4>
-                <span>
-                    <img className="imgB" src={imgB} />
-                    <img className="imgB2" src={imgB2}/>
+            <div className="div-bao">
+                <h3 className="h3-b-name">Bao Khanh Tran</h3>
+                <h3 className="h3-b-role">Tech Lead</h3>
+                <h4 className="h2-b-location">San Diego, CA</h4>
+                <span className="spanny">
+                    <img className="img-bao" src={imgB} />
+                    <img className="img-bao-2" src={imgB2}/>
                 </span>
-                <p className="p3">After serving 6 years in the US Navy as a Nuclear Operator, Bao pursued a path in web development. He likes to problem solve and share his experiences with others. His hobbies include working out and exploring new food places in San Diego.</p>
-                <p>A fun fact Bao knows:  </p>
+                <p className="about-p3">After serving 6 years in the US Navy as a Nuclear Operator, Bao pursued a path in web development. He likes to problem solve and share his experiences with others. His hobbies include working out and exploring new food places in San Diego.</p>
+                <p>A fun fact Bao knows: "Google" originates from "googol," a term for the number 1 with 100 zeros </p>
             </div>
         </div>
     )
