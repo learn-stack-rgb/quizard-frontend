@@ -101,6 +101,7 @@
 
 h1, h2 {
 	color: var(--secondary-color);
+}
 
 .deck-index-img {
 	width: 350px;
