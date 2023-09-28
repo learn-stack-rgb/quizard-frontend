@@ -37,7 +37,7 @@ let mockCards = [
 		id: 5,
 		deck_id: 2,
 		question: "Name 3 different Hooks in React?",
-		answer: " useState, useEffects, useRef SIGNUP/LOGIN FOR FULL ACCESS",
+		answer: " useState, useEffect, useRef SIGNUP/LOGIN FOR FULL ACCESS",
 		seen: false,
 		correct: false,
 	},
