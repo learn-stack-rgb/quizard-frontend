@@ -16,7 +16,7 @@ const SignIn = ({ login }) => {
     }
 
     login(userInfo)
-    navigate("/mydecks")
+    navigate("/")
     e.target.reset()
   }
 

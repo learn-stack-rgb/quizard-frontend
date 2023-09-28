@@ -31,8 +31,8 @@ const App = () => {
     }
   }, [])
 
-  const url = 'http://localhost:3000'
-  // const url = 'https://quizard-backend.onrender.com'
+  // const url = 'http://localhost:3000'
+  const url = 'https://quizard-backend.onrender.com'
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {
@@ -192,7 +192,7 @@ const App = () => {
     <>
       <Header currentUser={currentUser} logout={logout} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home currentUser={currentUser}/>} />
         <Route path="/decks" element={<DeckIndex decks={decks} />} />
         <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards} readCard={readCard} />} />
         {currentUser && (
