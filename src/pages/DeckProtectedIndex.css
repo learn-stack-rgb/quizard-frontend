@@ -7,3 +7,23 @@
 .card-page-container {
   
 }
+
+.protect-liz-deck {
+  height: auto;
+  width: 250px;
+  margin-top: 8px;
+}
+
+.protect-deck-span {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  align-items: center;
+}
+
+.deck-page-container {
+  display: flex;
+ flex-direction: row;
+}
