@@ -13,3 +13,16 @@
 .nav-item a {
   text-decoration: none;
 }
+
+.nav-item, .nav-link {
+  color: #6C4F43;
+}
+
+.nav-link:hover {
+  color: #b28d7d;
+}
+
+.liz-house {
+  width: 60px;
+  height: 60px;
+}
