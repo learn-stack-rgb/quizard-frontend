@@ -12,7 +12,6 @@ describe ("<DeckIndex>", () => {
         )
         const images = screen.getAllByRole("img")
         expect(images).toHaveLength(mockDecks.length)
-   
     })
     
 })
