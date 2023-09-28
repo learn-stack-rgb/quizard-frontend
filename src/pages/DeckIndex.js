@@ -6,7 +6,7 @@ import '../App.css'
 
 const DeckIndex = ({ decks }) => {
   return (
-    <div className='deck-page-container'>
+    <div className='deck-page-container' style={{backgroundColor:"var(--primary-color)"}}>
       <span className="deck-index-span">
       <h2 className='page-title'>All Decks</h2>
       <img className="deck-index-img" src={deckIndexImg} />

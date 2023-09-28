@@ -2,6 +2,7 @@
   width: 100%;
   text-align: center;
   font-size: 3rem;
+  
 }
 
 .card-page-container {
@@ -24,6 +25,8 @@
 }
 
 .deck-page-container {
-  display: flex;
+  
+display: flex;
  flex-direction: row;
+ 
 }
