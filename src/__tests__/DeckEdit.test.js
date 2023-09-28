@@ -16,5 +16,4 @@ describe("<DeckEdit />", () => {
     const element = screen.getByText("Edit Deck")
     expect(element).toBeInTheDocument()
   })
-
 })

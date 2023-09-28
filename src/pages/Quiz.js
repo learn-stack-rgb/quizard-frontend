@@ -19,7 +19,6 @@ const Quiz = ({ decks, cards, readCard }) => {
       setCurrentDeckTitle(currentDeck.title)
     }
     readCard(deck_id)
-    containerRef.current.scrollTo(0, 0)
   }, [deck_id, decks])
 
   const handleRight = () => {
@@ -69,10 +68,10 @@ const Quiz = ({ decks, cards, readCard }) => {
       </div>
 
       <span className='arrows-container'>
-        <button className='left-arrow' onClick={handleLeft}>
+        <button className='left-arrow' data-testid="left-arrow" onClick={handleLeft}>
           <FaArrowLeft size="4rem" />
         </button>
-        <button className='right-arrow' onClick={handleRight} >
+        <button className='right-arrow' data-testid="right-arrow" onClick={handleRight} >
           <FaArrowRight size="4rem" />
         </button>
       </span>
