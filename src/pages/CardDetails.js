@@ -9,7 +9,6 @@ const CardDetails = ({ card }) => {
 
   const handleClick = () => {
     setFlip(!flip)
-    console.log("flipped")
   }
 
   return (

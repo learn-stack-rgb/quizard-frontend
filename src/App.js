@@ -16,6 +16,7 @@ import DeckIndex from './pages/DeckIndex'
 import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
 import AboutUs from './pages/AboutUs'
+import Quiz from './pages/Quiz';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -30,8 +31,8 @@ const App = () => {
     }
   }, [])
 
-   //const url = 'http://localhost:3000'
-  const url = 'https://quizard-backend.onrender.com'
+  const url = 'http://localhost:3000'
+  // const url = 'https://quizard-backend.onrender.com'
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {
@@ -174,8 +175,8 @@ const App = () => {
       .catch(errors => console.log("update deck error: ", errors))
   }
 
-  const updateCard = (updatedCard, deckId, cardId ) => {
-    fetch(`${url}/decks/${deckId}/cards/${cardId}`,{
+  const updateCard = (updatedCard, deckId, cardId) => {
+    fetch(`${url}/decks/${deckId}/cards/${cardId}`, {
       body: JSON.stringify(updatedCard),
       headers: {
         "Content-Type": "application/json"
@@ -203,6 +204,7 @@ const App = () => {
             <Route path="/mydecks/:deck_id/cardnew" element={<CardNew createCard={createCard} decks={decks} />} />
             <Route path={`/mydecks/:deck_id/edit`} element={<DeckEdit decks={decks} currentUser={currentUser} updateDeck={updateDeck} />} />
             <Route path="/mydecks/:deck_id/:card_id/cardedit" element={<CardEdit decks={decks} cards={cards} updateCard={updateCard} />} />
+            <Route path="/decks/:deck_id/quiz" element={<Quiz decks={decks} cards={cards} readCard={readCard}/>} />
           </>
         )}
         {!currentUser && (

@@ -19,6 +19,17 @@ const DeckIndex = ({ decks }) => {
               View Deck
             </Button>
           </NavLink>
+
+          <NavLink to={`/decks/${deck.id}/quiz`}>
+            <Button style={{
+              borderRadius: '10px',
+              fontSize: '1.2rem',
+              backgroundColor: 'gray'
+              }}>
+              Quiz
+            </Button>
+          </NavLink>
+          
         </div>
       ))}
     </div>
