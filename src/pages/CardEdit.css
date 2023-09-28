@@ -1,17 +1,36 @@
 .card-edit-div {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 90vh;
 
-    >h1 {
-        font-size: 4rem;
-        font-weight: 900;
-        text-shadow: 0px 6px 5px #4A5D23;
-    }
+  >h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 0px 6px 5px #4A5D23;
+  }
 }
 
 .edit-liz {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
+}
+
+.edit-card {
+  >label {
+    transform: translateY(20px);
+  }
+
+}
+
+.edit-button {
+  border-radius: 20px;
+}
+
+.cancel-btn {
+  background-color: grey;
+  border-radius: 5px;
 }

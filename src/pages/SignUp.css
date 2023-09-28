@@ -5,6 +5,8 @@
   align-items: center;
   height: 90vh;
   padding-top: 20px;
+  background-color: var(--primary-color);
+	color: var(--secondary-color);
 
   > h1 {
     font-size: 4rem;

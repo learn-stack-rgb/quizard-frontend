@@ -21,7 +21,7 @@ const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => {
     <>
       <div className='card-page-container'>
       <h1>{currentDeckTitle}</h1>
-      <NavLink to={`/mydecks/${deck_id}/cardnew`}><button>Create Card</button></NavLink>
+      <NavLink to={`/mydecks/${deck_id}/cardnew`}><button id="create-card">Create Card</button></NavLink>
         {myCards?.map((card, index) => {
           return (
   

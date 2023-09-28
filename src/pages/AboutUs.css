@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    background-repeat: no-repeat;
+    background-color: var(--primary-color);
 }
 
 .about-h1 {
