@@ -12,7 +12,7 @@
   background-size: 100% 100%;
 
   > h1 {
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 3.2rem;
     font-weight: 600;
     text-shadow: 0px 5px 10px var(--blue-lizard);
@@ -28,8 +28,8 @@
     color: var(--secondary-color);
   }
   > img {
-    width: 190px;
-    height: auto;
+    width: 150px;
+    height: 120px;
     background-color: transparent;
   }
 }
@@ -39,7 +39,7 @@
   border-radius: 50px;
   height: 50vh;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: none ;
   display: grid;
   grid-auto-flow: column;
@@ -47,7 +47,11 @@
   scroll-snap-type: x mandatory;
   margin-top: 10px;
   background-color: transparent;
-  backdrop-filter: blur(30px);
+  backdrop-filter: sepia(75%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .quiz-cards {
@@ -56,8 +60,6 @@
   display: flex;
   justify-content: center;
   background-color: transparent;
-  backdrop-filter: blur(30px);
-  
 }
 
 .quiz-buttons {
@@ -77,12 +79,13 @@
 
     &:hover{
       opacity: 1;
+      color: white;
     }
   }
 }
 
 .correct-btn {
-  background-color: green;
+  background-color: limegreen;
 }
 
 .wrong-btn{
@@ -93,12 +96,12 @@
   border: none;
   background-color: transparent;
   pointer-events: all;
-  color: var(--secondary-color);
-  opacity: .8;
+  color: white;
+  opacity: .6;
   &:hover {
     cursor: pointer;
-    color: black;
-    opacity: 9;
+    opacity: 1;
+    color: var(--secondary-color);
   }
 }
 
@@ -113,4 +116,89 @@
 .indicators-container{
   display: flex;
   margin-top: 5px;
+  color: #aa4203;
+}
+
+.quiz-instructions{
+  width: 35vw;
+  height: auto;
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  color: white;
+  text-align: left;
+
+  > h5 {
+    font-weight: 900;
+    text-shadow: 0px 1px 5px black;
+  }
+}
+.quiz-score-container{
+  position: absolute;
+}
+
+.quiz-score {
+  height: auto;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 340%);
+  pointer-events: none;
+  column-gap: 300px;
+  > div h5 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0px 5px 10px var(--green-lizard);
+  }
+}
+
+.score-div , .question-div{
+  border-radius: 25px;
+  backdrop-filter: hue-rotate(120deg) blur(5px);
+  width: 150px;
+  height: auto;
+}
+
+.motiv-msg-container{
+  /* border: 1px solid red; */
+  color: white;
+  width: max-content;
+  display: flex;
+  overflow: hidden;
+}
+
+.motiv-msg{
+  white-space: nowrap;
+  max-width: 80%;
+}
+
+.quiz-no-cards{
+  > h2 {
+    font-weight: 900;
+    color: red;
+    text-shadow: 0px 1px 5px white;
+  }
+}
+
+.quiz-no-cards button {
+  border-radius: 20px;
+  height: 50px;
+  opacity: .6;
+
+
+  &:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.word-correct{
+  color: limegreen;
+  text-shadow: 0px 2px 3px black;
+}
+
+.word-wrong {
+  color: red;
+  text-shadow: 0px 2px 3px black;
 }

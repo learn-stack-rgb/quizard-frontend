@@ -8,4 +8,5 @@ test('renders without crashing', () => {
     <App />
   </BrowserRouter>
   )
-})
+});
+
