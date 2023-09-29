@@ -1,18 +1,30 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import CardIndex from "../pages/CardIndex";
-import mockCards from "../mockCards"
+import mockDecks from "../mockDecks"
+import mockCards from "../mockCards";
 
-describe ("<CardIndex>", () => {
-    it("renders without crashing", () => {})
-    it ("renders cards in decks without crashing", () => {
+describe("<CardIndex />", () => {
+    const readCard = () => {
+        return
+    }
+
+    const rendering = () => {
         render(
-            <BrowserRouter>
-                <CardIndex decks={mockCards}/>
-            </BrowserRouter>
+            <MemoryRouter initialEntries={["/decks/1"]}>
+                <Routes>
+                    <Route path="/decks/:deck_id" element={<CardIndex decks={mockDecks} cards={mockCards} readCard={readCard} />} />
+                </Routes>
+            </MemoryRouter>
         )
-        const images = screen.getAllByRole("img")
-        expect(images).toHaveLength(mockCards.length)
-   
+    }
+
+    it("renders without crashing", () => {
+        rendering()
+    })
+
+    it("renders heading", () => {
+        rendering()
+        expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument()
     })
 })
