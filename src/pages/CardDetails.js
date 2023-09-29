@@ -3,7 +3,7 @@ import ReactCardFlip from 'react-card-flip'
 import './CardDetails.css'
 
 
-const CardDetails = ({ card, turnDirection}) => {
+const CardDetails = ({ card, turnDirection }) => {
 
   const [flip, setFlip] = useState(false)
 
@@ -13,10 +13,10 @@ const CardDetails = ({ card, turnDirection}) => {
 
   return (
     <>
-      <ReactCardFlip isFlipped={flip} flipDirection={turnDirection? turnDirection: "horizontal"}>
+      <ReactCardFlip isFlipped={flip} flipDirection={turnDirection ? turnDirection : "horizontal"}>
         <div className='front' onClick={handleClick}>{card.question}
         </div>
-        <div className='back'onClick={handleClick}>{card.answer}</div>
+        <div className='back' onClick={handleClick}>{card.answer}</div>
       </ReactCardFlip>
     </>
   )

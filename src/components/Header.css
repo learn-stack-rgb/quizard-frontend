@@ -26,6 +26,10 @@
 .liz-house {
   width: 50px;
   height: 5vh;
+  opacity: 1;
+  &:hover {
+    opacity: .5;
+  }
 }
 
 .nav-item-container .nav-item .nav-link {
