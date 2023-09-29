@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Input, Label, NavLink , FormGroup } from 'reactstrap'
+import { Form, Input, Label, NavLink, FormGroup } from 'reactstrap'
 import { useNavigate, useParams } from 'react-router-dom'
 import './CardNew.css'
+import createLiz from '../assets/Create-Card.png'
 
 const CardNew = ({ createCard, decks }) => {
-    const {deck_id} = useParams()
+    const { deck_id } = useParams()
     const navigate = useNavigate()
     const [newCard, setNewCard] = useState({
         question: '',
@@ -26,25 +27,23 @@ const CardNew = ({ createCard, decks }) => {
     }
 
     return (
-
-        <Form>
-            <div className='cardHeader'>
+        <>
+            <div className='card-new-container'>
                 <h1>Create A Card</h1>
-            </div>
-            <FormGroup>
-                <Label for='question'>
-                    Question:
-                </Label>
-                <Input id='question' name='question' placeholder='Enter a question' type='text' onChange={handleChange} value={newCard.question} />
+                <img className='create-liz' alt="create-liz" src={createLiz} />
+                <form className='create-card' onSubmit={handleSubmit}>
+                    <label classname='create-question' for='question'>Question</label>
+                    <input type='text' name='question' value={newCard.question} onChange={handleChange} />
 
-                <Label for='answer'>
-                    Answer:
-                </Label>
-                <Input id='answer' name='answer' placeholder='Enter the answer' type='text' onChange={handleChange} value={newCard.answer} />
-                <button onClick={handleSubmit}>Submit</button>
-                <button onClick={handleCancel}>Cancel</button>
-            </FormGroup>
-        </Form>
+                    <label className='create-answer' for='answer'>Answer</label>
+                    <input type='text' name='answer' value={newCard.answer} onChange={handleChange} />
+
+                    <input type='submit' value='Submit Change' className='create-submit-btn' />
+
+                    <button onClick={handleCancel} className='create-cancel'>Cancel</button>
+                </form>
+            </div>
+        </>
     )
 
 }

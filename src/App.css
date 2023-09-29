@@ -8,6 +8,11 @@
 	font-weight: 900;
 }
 
+body {
+	height: 100%;
+	overflow-y: hidden;
+}
+
 :root {
 	--light-mode-bg: #f2eede;
 	--light-mode-text: black;

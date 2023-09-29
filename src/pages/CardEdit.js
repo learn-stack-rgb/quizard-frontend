@@ -34,11 +34,11 @@ const CardEdit = ({ decks, cards, updateCard }) => {
       <h1>Edit Card</h1>
       <img className='edit-liz' alt="wiz-liz-edit" src={editLiz} />
       <form className='edit-card' onSubmit={handleSubmit}>
-        <label>Question</label>
-        <input type='text' name='question' value={editCard.question} onChange={handleChange} />
+        <label for='question' className='edit-card-question'>Question</label>
+        <input className='edit-card-input'type='text' name='question' value={editCard.question} onChange={handleChange} />
 
-        <label>Answer</label>
-        <input type='text' name='answer' value={editCard.answer} onChange={handleChange} />
+        <label for='answer' className='edit-card-answer'>Answer</label>
+        <input className='edit-card-input'type='text' name='answer' value={editCard.answer} onChange={handleChange} />
 
         <input type='submit' value='Submit Change' className='edit-button' />
         
