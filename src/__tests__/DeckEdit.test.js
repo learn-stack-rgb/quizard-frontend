@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import DeckEdit from "../pages/DeckEdit";
-import mockDecks from "../mockDecks";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
-import mockUsers from "../mockUsers";
+import { render, screen } from "@testing-library/react"
+import DeckEdit from "../pages/DeckEdit"
+import mockDecks from "../mockDecks"
+import { MemoryRouter, Routes, Route } from "react-router-dom"
+import mockUsers from "../mockUsers"
 
 describe("<DeckEdit />", () => {
   const updateDeck = () => {

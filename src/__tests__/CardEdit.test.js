@@ -16,7 +16,7 @@ const renderEdit = () => {
   describe('<CardEdit />', () => {
     it("renders the CardEdit page for the user", () => {
       renderEdit()
-      const editLink = screen.getByRole('link', {
+      const editLink = screen.toBeInTheDocument()('link', {
         name: /edit card/i
       })
       expect(editLink).toBeInTheDocument()
@@ -28,8 +28,8 @@ const renderEdit = () => {
     it("has a form with entries for question and answer", () => {
       renderEdit()
   
-      const formQuestion = screen.getByText("Question")
-      expect(formQuestion.getAttribute("for")).toEqual("Question")
+      const formQuestion = screen.getByText("question")
+      expect(formQuestion.getAttribute("for")).toEqual("question")
   
       const formAnswer = screen.getByText("Answer")
       expect(formAnswer.getAttribute("for")).toEqual("answer")
