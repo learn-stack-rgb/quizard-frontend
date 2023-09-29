@@ -6,6 +6,12 @@
   color: transparent;
   cursor: default;
   pointer-events: none;
+  overflow-y: hidden;
+}
+
+.sparkle::-webkit-scrollbar {
+  display: none;
+  overflow-y: none;
 }
 
 @keyframes fall {
