@@ -17,6 +17,7 @@ import CardIndex from './pages/CardIndex'
 import DeckEdit from './pages/DeckEdit';
 import AboutUs from './pages/AboutUs'
 import Quiz from './pages/Quiz';
+import Sparkle from './components/Sparkle';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -191,13 +192,14 @@ const App = () => {
 
   return (
     <>
+      <Sparkle />
       <Header currentUser={currentUser} logout={logout} />
       <Routes>
         <Route path="/" element={<Home currentUser={currentUser}/>} />
         <Route path="/decks" element={<DeckIndex decks={decks} />} />
         <Route path="/decks/:deck_id" element={<CardIndex decks={decks} cards={cards} readCard={readCard} />} />
         {currentUser && (
-          <>
+          <> 
             <Route path="/decks" element={<DeckIndex decks={decks} />} />
             <Route path="/mydecks" element={<DeckProtectedIndex deleteDeck={deleteDeck} decks={decks} currentUser={currentUser} />} />
             <Route path={`/mydecks/:deck_id`} element={<CardProtectedIndex decks={decks} cards={cards} currentUser={currentUser} readCard={readCard} deleteCard={deleteCard} />} />
