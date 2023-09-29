@@ -25,13 +25,19 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
             <div className='deck-container' key={index}>
               <h2 className='deck-title'>{deck.title}</h2>
               <NavLink to={`/mydecks/${deck.id}`}>
-                <Button>
+                <Button style={{
+                  borderRadius: '10px',
+                  fontSize: '1.2rem',
+                }}>
                   View Deck
                 </Button>
               </NavLink>
 
               <NavLink to={`/mydecks/${deck.id}/edit`}>
-                <Button>
+                <Button style={{
+                  borderRadius: '10px',
+                  fontSize: '1.2rem',
+                }}>
                   Edit
                 </Button>
               </NavLink>
@@ -40,14 +46,16 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
                 <Button style={{
                   borderRadius: '10px',
                   fontSize: '1.2rem',
-                  backgroundColor: 'gray'
                 }}>
                   Quiz
                 </Button>
               </NavLink>
 
               <NavLink to={"/"}>
-                <Button onClick={() => deleteDeck(deck.id)} className='delete-button'>
+                <Button style={{
+                  borderRadius: '10px',
+                  fontSize: '1.2rem',
+                }} onClick={() => deleteDeck(deck.id)} className='delete-button'>
                   Delete
                 </Button>
               </NavLink>
