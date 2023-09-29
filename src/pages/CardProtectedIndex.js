@@ -42,10 +42,3 @@ const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => {
 }
 
 export default CardProtectedIndex 
-
-
-
-
-
-
-

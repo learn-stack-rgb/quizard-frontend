@@ -17,8 +17,8 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
     <>
       <div className='deck-page-container'>
         <span className='protect-deck-span'>
-        <h2 className='page-title'>My Decks</h2>
-        <img className='protect-liz-deck' src={protecLizDeck} />
+          <h2 className='page-title'>My Decks</h2>
+          <img className='protect-liz-deck' src={protecLizDeck} />
         </span>
         {myDecks?.map((deck, index) => {
           return (
@@ -31,15 +31,25 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
               </NavLink>
 
               <NavLink to={`/mydecks/${deck.id}/edit`}>
-                  <Button>
-                    Edit
-                  </Button>
+                <Button>
+                  Edit
+                </Button>
               </NavLink>
               
+              <NavLink to={`/decks/${deck.id}/quiz`}>
+                <Button style={{
+                  borderRadius: '10px',
+                  fontSize: '1.2rem',
+                  backgroundColor: 'gray'
+                }}>
+                  Quiz
+                </Button>
+              </NavLink>
+
               <NavLink to={"/"}>
-                  <Button onClick={() => deleteDeck(deck.id)} className='delete-button'>
-                    Delete
-                  </Button>
+                <Button onClick={() => deleteDeck(deck.id)} className='delete-button'>
+                  Delete
+                </Button>
               </NavLink>
             </div>
           )
