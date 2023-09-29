@@ -1,5 +1,4 @@
 import React from "react";
-import { Routes, useNavigate } from "react-router-dom";
 import imgG from '../assets/IMG-20230801-WA0008-fotor-bg-remover-20230926115028.png'
 import imgB from '../assets/bao.png'
 import imgR from '../assets/aboutme-fotor-bg-remover-20230926181442.png'
@@ -39,7 +38,7 @@ const AboutUs = () => {
             <div className="div-bao">
                 <h3 className="h3-b-name">Bao Khanh Tran</h3>
                 <h3 className="h3-b-role">Tech Lead</h3>
-                <h4 className="h2-b-location">San Diego, CA</h4>
+                <h4 className="h3-b-location">San Diego, CA</h4>
                 <span className="spanny">
                     <img className="img-bao" src={imgB} />
                     <img className="img-bao-2" src={imgB2}/>
