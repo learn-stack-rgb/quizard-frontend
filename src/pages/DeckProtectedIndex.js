@@ -4,8 +4,6 @@ import { Button } from 'reactstrap'
 import { NavLink, useParams } from 'react-router-dom'
 import protecLizDeck from '../assets/wiz-liz-read.png'
 
-
-
 const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
   let { id } = useParams()
 
@@ -15,7 +13,7 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
 
   return (
     <>
-      <div className='deck-page-container'>
+      <div className='deck-page-container protect-deck-container'>
         <span className='protect-deck-span'>
           <h2 className='page-title'>My Decks</h2>
           <img className='protect-liz-deck' src={protecLizDeck} />
@@ -25,37 +23,25 @@ const DeckProtectedIndex = ({ decks, currentUser, deleteDeck }) => {
             <div className='deck-container' key={index}>
               <h2 className='deck-title'>{deck.title}</h2>
               <NavLink to={`/mydecks/${deck.id}`}>
-                <Button style={{
-                  borderRadius: '10px',
-                  fontSize: '1.2rem',
-                }}>
+                <Button>
                   View Deck
                 </Button>
               </NavLink>
 
               <NavLink to={`/mydecks/${deck.id}/edit`}>
-                <Button style={{
-                  borderRadius: '10px',
-                  fontSize: '1.2rem',
-                }}>
+                <Button>
                   Edit
                 </Button>
               </NavLink>
               
               <NavLink to={`/decks/${deck.id}/quiz`}>
-                <Button style={{
-                  borderRadius: '10px',
-                  fontSize: '1.2rem',
-                }}>
-                  Quiz
+                <Button >
+                  Take Quiz
                 </Button>
               </NavLink>
 
-              <NavLink to={"/"}>
-                <Button style={{
-                  borderRadius: '10px',
-                  fontSize: '1.2rem',
-                }} onClick={() => deleteDeck(deck.id)} className='delete-button'>
+              <NavLink to={"/mydecks"}>
+                <Button onClick={() => deleteDeck(deck.id)} className='delete-button'>
                   Delete
                 </Button>
               </NavLink>

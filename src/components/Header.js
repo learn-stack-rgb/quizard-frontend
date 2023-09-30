@@ -90,7 +90,7 @@ const Header = ({ currentUser, logout }) => {
       <div className="nav-item-container" >
         <NavItem className='nav-item'>
           <NavLink className='nav-link' to="/aboutus">
-            About Us
+            Meet The Team!
           </NavLink>
         </NavItem>
       </div>

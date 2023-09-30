@@ -67,6 +67,9 @@ body {
 	background-color: var(--card-front);
 	margin-bottom: 10%;
 
+	&:hover{
+		opacity: 0.9;
+	}
 
 	>a {
 		display: flex;
@@ -90,6 +93,7 @@ body {
 	background-color: transparent;
 	font-weight: 600;
 	color: white;
+	text-shadow: 0px 2px 5px black;
 }
 
 .deck-container .delete-button {
@@ -111,8 +115,8 @@ h1, h2 {
 }
 
 .deck-index-img {
-	width: 350px;
-	height: auto;
+	width: 150x;
+	height: 200px;
 }
 
 .deck-index-span {

@@ -6,8 +6,10 @@ const Footer = () => {
     return(
         <>
         <div className='footer-container'>
-            <a>2023 Quizard brought to you by </a>
-            <img src={rgb} />
+            <span className='footer-content-container'>
+                <a>2023 Quizard brought to you by <img src={rgb} /> @LEARN academy
+                </a>
+            </span>
         </div>
         </>
     )

@@ -2,15 +2,45 @@
   display: flex;
   flex-direction: row;
   height: 5vh;
+  width: 100vw;
   align-items: end;
-  
-  > a {
-    margin-right: 10px;
-  }
-  > img {
-    display: inline;
+
+}
+
+.footer-container .footer-content-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  > a img {
     width: 150px;
     height: max-content;
   }
+}
+
+
+@media (width < 380px) {
+  .footer-container {
+    width: 100vw;
+  }
+
+  .footer-container .footer-content-container{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+  
+    > a img {
+      width: 120px;
+      height: max-content;
+    }
+  }
+
+  .footer-container .footer-content-container a{
+    font-size: 12px;
+  }
+
 }
 
