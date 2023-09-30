@@ -8,9 +8,17 @@
 	font-weight: 900;
 }
 
-body {
-	height: 100%;
-	overflow-y: hidden;
+/* body {
+	height: max-content;
+	overflow-y: auto;
+} */
+
+html,body {
+	margin: 0;
+	padding: 0;
+	height: auto;
+	min-width: 100%;
+	overflow: hidden;
 }
 
 :root {

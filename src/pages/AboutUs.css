@@ -6,8 +6,20 @@
     align-items: center;
     overflow-y: auto;
     background-color: var(--primary-color);
+    row-gap: 5px;
 }
 
+#meet {
+    text-shadow: 1px 5px 5px salmon;
+}
+
+#our {
+    text-shadow: 1px 5px 5px var(--green-lizard);
+}
+
+#team {
+    text-shadow: 1px 5px 5px var(--blue-lizard); 
+}
 .about-h1 {
     width: 100%;
     font-size: 4rem;
@@ -46,18 +58,40 @@ p {
 .spanny {
     background-color: transparent;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    column-gap: 20px;
+    >img {
+        height: auto;
+        width: 200px;
+    }
 }
 
 .div-raquel, .div-graham, .div-bao {
     height: auto;
     width: 675px;
     display: flex;
-    background-color: transparent;
+    /* background-color: transparent; */
+    /* background-color: #61939e7c; */
+    background-color: var(--card-back);
     flex-direction: column;
     margin-top: 5px;
     padding: 5px;
-    box-shadow: rgb(141, 123, 63, 0.5) 3px 3px 6px 0px inset, rgba(150, 132, 69, 0.5) -3px -3px 6px 1px inset;
+    /* box-shadow: rgb(141, 123, 63, 0.5) 3px 3px 6px 0px inset, rgba(150, 132, 69, 0.5) -3px -3px 6px 1px inset; */
+    /* box-shadow: 0px 0px 25px black; */
+    border: 6px solid var(--secondary-color);
+    border-radius: 10% 10% 10% 10%;
+}
+
+.div-raquel{
+    box-shadow: 0px 0px 20px salmon;
+}
+
+.div-graham{
+    box-shadow: 0px 0px 20px var(--green-lizard);
+}
+
+.div-bao{
+    box-shadow: 0px 0px 20px var(--blue-lizard);
 }
 
 .img-bao {
@@ -87,3 +121,8 @@ p {
     margin-top: 10px;
 }
 
+.div-all-about div p {
+    text-shadow: 0px 0px 20px black;
+    font-size: 1.3rem;
+    margin-top: 10px;
+} 

@@ -3,8 +3,7 @@
   flex-direction: row;
   height: 5vh;
   width: 100vw;
-  align-items: end;
-
+  align-items: flex-end;
 }
 
 .footer-container .footer-content-container{
@@ -27,7 +26,7 @@
   .footer-container .footer-content-container{
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
     background-color: transparent;
     width: 100%;
