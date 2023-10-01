@@ -1,6 +1,6 @@
 import React from "react";
 import './NotFound.css'
-import snek from '../assets/snek-404.png'
+import snek from '../assets/1000021840.png'
 
 
 const NotFound = () => {

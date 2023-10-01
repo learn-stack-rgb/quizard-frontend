@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef} from "react";
 import { NavLink } from "react-router-dom"
 import { Button } from "reactstrap";
-import deckIndexImg from '../assets/1695850202861-Standard.png'
+import deckIndexImg from '../assets/1000021837.png'
 import '../App.css' 
 import { gsap } from "gsap";
 

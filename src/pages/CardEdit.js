@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import editLiz from '../assets/edit-card-liz.png'
+import editLiz from '../assets/1000021872.png'
 import './CardEdit.css'
 
 const CardEdit = ({ decks, cards, updateCard }) => {
