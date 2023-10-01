@@ -30,50 +30,66 @@ const AboutUs = () => {
                 },
                 {
                     opacity: 1,
+                    rotationY: 360,
+                    rotationX: 360,
                     rotation: 360,
+                    duration: 1.5,
                     scrollTrigger: {
                         scroller: parentRef.current,
                         trigger: raquel,
-                        // start: "57%% 55%",
-                        // end: "center 43%",
+                        // markers: true,
                         start: "top 80",
                         end: "top 50",
-                        onLeaveBack: () => raqsAnimation.restart()
+                        onLeaveBack: () => raqsAnimation.reverse()
                     }
                 })
 
-            gsap.fromTo(graham,
+            const grahamsAnimation = gsap.fromTo(graham,
                 {
                     x: "50vw",
                     opacity: 0,
+                    scale: .5,
                 },
-                {
+                {   
+                    scale: 1,
+                    rotationY: 360,
+                    rotationX: 360,
                     opacity: 1,
                     x: "0",
                     ease: "none",
+                    rotation: -720,
                     scrollTrigger: {
                         scroller: parentRef.current,
                         trigger: graham,
-                        start: "top 80%",
-                        end: "bottom bottom",
+                        markers: true,
+                        start: "top-=150 80%",
+                        end: "bottom+=150 bottom",
                         scrub: true,
+                       
                     }
                 })
 
             gsap.fromTo(bao,
                 {
                     x: "-50vw",
-                    opacity: 0
+                    opacity: 0,
+                    scale: .5,
+                    
                 },
                 {
+                    rotationY: 360,
+                    rotationX: 360,
+                    scale: 1,
                     x: 0,
                     opacity: 1,
+                    rotation: 720,
                     ease: "none",
                     scrollTrigger: {
                         scroller: parentRef.current,
                         trigger: bao,
-                        start: "top 80%",
-                        end: "bottom bottom",
+                        // markers: true,
+                        start: "top-=150 80%",
+                        end: "bottom+=150 bottom",
                         scrub: true,
                     }
                 })
