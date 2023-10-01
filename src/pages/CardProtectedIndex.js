@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useLayoutEffect} from 'react'
 import './CardProtectedIndex.css'
 import { useParams, NavLink } from 'react-router-dom'
+import { gsap } from 'gsap'
 
 
 const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => { 
@@ -16,6 +17,35 @@ const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => {
   }, [deck_id, decks])
   
   const myCards = cards.filter(card => card.deck_id === parseInt(deck_id))
+
+  useLayoutEffect(() => {
+  
+    gsap.fromTo(".card-content:nth-child(even)", {
+      x: "100vh"
+    }, {
+      x: 0,
+      duration: 1.5,
+      stagger: {
+        from: "top",
+        each: .25,
+      },
+      clearProps: "all"
+    })
+
+    gsap.fromTo(".card-content:nth-child(odd)", {
+      x: "-100vh"
+    }, {
+      x: 0,
+      duration: 1.5,
+      stagger: {
+        from: "top",
+        each: .25,
+      },
+      clearProps: "all"
+
+    })
+
+  },[])
 
   return (
     <>

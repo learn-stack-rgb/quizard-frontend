@@ -46,6 +46,7 @@ html,body {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	row-gap: 10px;
+	overflow-x: hidden;
 	overflow-y: auto;
 	background-color: var(--primary-color);
 	color: var(--secondary-color)
@@ -74,9 +75,12 @@ html,body {
 	padding: 20px;
 	background-color: var(--card-front);
 	margin-bottom: 10%;
+	transform: rotate(760deg);
 
 	&:hover{
 		opacity: 0.9;
+		transform: rotate(360deg);
+		transition: transform 0.3s ease;
 	}
 
 	>a {
@@ -125,6 +129,7 @@ h1, h2 {
 .deck-index-img {
 	width: 150x;
 	height: 200px;
+	margin-bottom: 25px;
 }
 
 .deck-index-span {

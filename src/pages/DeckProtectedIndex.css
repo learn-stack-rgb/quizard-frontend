@@ -5,8 +5,8 @@
 }
 
 .protect-liz-deck {
-  height: auto;
-  width: 200px;
+  height: 180px;
+  width: 180px;
   margin-top: 8px;
 }
 
@@ -40,4 +40,9 @@
   &:hover {
     background-color: red;
   }
+}
+
+.protect-deck{
+  transform: rotate(700deg);
+  margin-top: 25px;
 }

@@ -44,10 +44,14 @@
       box-shadow: 1px 1px 5px var(--primary-color);
     }
   }
+
+  > input {
+    background-color: var(--primary-color);
+  }
   > label {
     background-color: var(--card-front);
     color: white;
-    font-weight: 500;
+    font-weight: 600;
   }
   > span {
     margin-top: 15px;

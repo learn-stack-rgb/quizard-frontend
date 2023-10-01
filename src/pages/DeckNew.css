@@ -59,6 +59,10 @@
 }
 
 .deck-create-img {
-  width: 300px;
+  width: 200px;
   height: auto;
+}
+
+#title.form-control{
+  background-color: var(--primary-color);
 }
