@@ -30,7 +30,7 @@ const Home = ({ currentUser }) => {
         .from('.homeImg', { opacity: 0, duration: 1.5 }, 0)
         .from('.step-1-container', { x: "-50vw", duration: 1.5, opacity: 0})
         .from('.step-2-container', { x: "+50vw", opacity: 0, duration: 1.5 })
-        .from('.home-card', {opacity: 0}, 1)
+        .from('.home-card', {opacity: 0, x: "-100vw", rotation: -720, duration: 5}, 1)
         .from('.free-card-title', {opacity: 0}, .5)
         .from('.step-3-container', {y: "-50vh", opacity: 0, ease: "elastic"} )
         .fromTo(".home-signup-btn", {opacity: 1}, {opacity: .1, repeat: -1, yoyo: true, duration: .5}, 2.5)

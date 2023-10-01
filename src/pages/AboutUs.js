@@ -61,7 +61,7 @@ const AboutUs = () => {
                     scrollTrigger: {
                         scroller: parentRef.current,
                         trigger: graham,
-                        markers: true,
+                        // markers: true,
                         start: "top-=150 80%",
                         end: "bottom+=150 bottom",
                         scrub: true,
@@ -89,7 +89,7 @@ const AboutUs = () => {
                         trigger: bao,
                         // markers: true,
                         start: "top-=150 80%",
-                        end: "bottom+=150 bottom",
+                        end: "bottom 85%",
                         scrub: true,
                     }
                 })

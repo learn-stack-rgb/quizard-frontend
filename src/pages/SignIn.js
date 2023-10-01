@@ -23,7 +23,7 @@ const SignIn = ({ login }) => {
   return (
     <div className="login-container">
       <h1>Log In</h1>
-      <img src={loginLiz}alt='login-liz'/>
+      <img src={loginLiz} alt='login-liz'/>
       <form className="login-card" ref={formRef} onSubmit={handleSubmit}>
         <label>Email</label>
         <input type='email' name='email' placeholder='email'/>
