@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input, Label, Button, FormGroup, NavLink } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
-import DeckCreate from '../assets/Create-deck.png'
+import DeckCreate from '../assets/1000021846.png'
 import './DeckNew.css'
 
 const DeckNew = ({ createDeck, currentUser }) => {

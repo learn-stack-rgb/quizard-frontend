@@ -6,11 +6,11 @@
   background-image: url("../assets/notfoundbg.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  
+  padding-top: 90px;
   
   > img {
     margin-top: 2%;
-    width: 50vw;
+    width: 35vw;
     height: 70vh;
     background-color: transparent;
   }

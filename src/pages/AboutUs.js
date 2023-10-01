@@ -2,7 +2,7 @@ import React from "react";
 import imgG from '../assets/IMG-20230801-WA0008-fotor-bg-remover-20230926115028.png'
 import imgB from '../assets/bao.png'
 import imgR from '../assets/aboutme-fotor-bg-remover-20230926181442.png'
-import imgG2 from '../assets/Wiz-liz-cricket-run.png'
+import imgG2 from '../assets/1000021869.png'
 import logLiz from '../assets/login-liz.png'
 import imgB2 from '../assets/wiz-liz-staff.png'
 import './AboutUs.css'

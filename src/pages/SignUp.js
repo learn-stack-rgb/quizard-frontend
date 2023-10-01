@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import './SignUp.css'
 import { useNavigate } from 'react-router-dom'
-import signUpLiz from '../assets/wiz-liz-flower2.png'
+import signUpLiz from '../assets/1000021878.png'
 
 const SignUp = ({ signup }) => {
 

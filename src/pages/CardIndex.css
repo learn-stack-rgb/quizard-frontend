@@ -1,0 +1,12 @@
+.page-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.detail-card {
+    height: auto;
+    width: 250px;
+    display: flex;
+    align-items: center;
+  }
