@@ -28,7 +28,7 @@ const Quiz = ({ decks, cards, readCard }) => {
       tl.current = gsap.timeline()
         .fromTo(".quiz-cards",
           { y: "-100%" },
-          { y: "0", ease: 'bounce', duration: 1, rotation: "-360" })
+          { y: "0", ease: 'power1', duration: 1.5, rotation: "-360" })
     }, parentRef)
     return () => ctx.revert()
   }, [cardIndex])
@@ -72,6 +72,9 @@ const Quiz = ({ decks, cards, readCard }) => {
     if (cardIndex > 0) {
       container.scrollBy({ left: -500, behavior: 'smooth' })
       setCardIndex(prevIndex => (prevIndex - 1))
+    } else {
+      container.scrollTo({right: 0, behavior: "smooth"})
+      setCardIndex(myCards.length-1)
     }
   }
 
