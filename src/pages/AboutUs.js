@@ -60,10 +60,10 @@ const AboutUs = () => {
                     rotation: -720,
                     scrollTrigger: {
                         scroller: parentRef.current,
-                        trigger: graham,
+                        trigger: ".bio-container-graham",
                         // markers: true,
-                        start: "top-=150 80%",
-                        end: "bottom+=150 bottom",
+                        start: "top center",
+                        end: "bottom bottom",
                         scrub: true,
                        
                     }
@@ -86,10 +86,10 @@ const AboutUs = () => {
                     ease: "none",
                     scrollTrigger: {
                         scroller: parentRef.current,
-                        trigger: bao,
+                        trigger: ".bio-container-bao",
                         // markers: true,
-                        start: "top-=150 80%",
-                        end: "bottom 85%",
+                        start: "top center",
+                        end: "bottom-=20 bottom",
                         scrub: true,
                     }
                 })
@@ -115,29 +115,35 @@ const AboutUs = () => {
                 <p className="p1">A full stack developer and U.S. Navy Veteran, Raquel is an amateur rapper, lover of dogs, and delights in exploring new restaurants. In her downtime, she enjoys watching documentaries. Drawn to software engineering for its creative potential, Raquel believes in diversifying tech and is dedicated to teaching others.</p>
                 <p>A fun fact Raquel knows: The ice cream cone was invented in New York </p>
             </div>
-            <div className="div-graham" ref={grahamRef}>
-                <h3 className="h3-g-name">Graham Blundell</h3>
-                <h3 className="h3-g-role">Product Manager & Project Manager</h3>
-                <h4 className="h3-g-location">San Diego, CA</h4>
-                <span className="spanny">
-                    <img className="img-graham" src={imgG} alt='graham-img'/>
-                    <img className="img-graham-2" src={imgG2} alt='liz-img' />
-                </span>
-                <p className="p2">A full stack web developer with a background in events, finance and insurance. Graham was introduced to coding by a friend and since then, has not looked back. Graham enjoys taking his dogs on adventures, rock climbing and playing a LOT of video games.</p>
-                <p>A fun fact Graham knows: There is a volcano on Mars three times the size of Mt Everest.  </p>
-            </div>
-            <div className="div-bao" ref={baoRef}>
-                <h3 className="h3-b-name">Bao Khanh Tran</h3>
-                <h3 className="h3-b-role">Tech Lead</h3>
-                <h4 className="h3-b-location">San Diego, CA</h4>
-                <span className="spanny">
-                    <img className="img-bao" src={imgB} alt="bao-img" />
-                    <img className="img-bao-2" src={imgB2} alt="liz-img" />
-                </span>
-                <p className="about-p3">After serving 6 years in the US Navy as a Nuclear Operator, Bao pursued a path in web development. He likes to problem solve and share his experiences with others. His hobbies include working out and exploring new food places in San Diego.</p>
-                <p>A fun fact Bao knows: "Google" originates from "googol," a term for the number 1 with 100 zeros </p>
+
+            <div className="bio-container-graham">
+                <div className="div-graham" ref={grahamRef}>
+                    <h3 className="h3-g-name">Graham Blundell</h3>
+                    <h3 className="h3-g-role">Product Manager & Project Manager</h3>
+                    <h4 className="h3-g-location">San Diego, CA</h4>
+                    <span className="spanny">
+                        <img className="img-graham" src={imgG} alt='graham-img'/>
+                        <img className="img-graham-2" src={imgG2} alt='liz-img' />
+                    </span>
+                    <p className="p2">A full stack web developer with a background in events, finance and insurance. Graham was introduced to coding by a friend and since then, has not looked back. Graham enjoys taking his dogs on adventures, rock climbing and playing a LOT of video games.</p>
+                    <p>A fun fact Graham knows: There is a volcano on Mars three times the size of Mt Everest.  </p>
+                </div>
             </div>
 
+            <div className="bio-container-bao">
+                <div className="div-bao" ref={baoRef}>
+                    <h3 className="h3-b-name">Bao Khanh Tran</h3>
+                    <h3 className="h3-b-role">Tech Lead</h3>
+                    <h4 className="h3-b-location">San Diego, CA</h4>
+                    <span className="spanny">
+                        <img className="img-bao" src={imgB} alt="bao-img" />
+                        <img className="img-bao-2" src={imgB2} alt="liz-img" />
+                    </span>
+                    <p className="about-p3">After serving 6 years in the US Navy as a Nuclear Operator, Bao pursued a path in web development. He likes to problem solve and share his experiences with others. His hobbies include working out and exploring new food places in San Diego.</p>
+                    <p>A fun fact Bao knows: "Google" originates from "googol," a term for the number 1 with 100 zeros </p>
+                </div>
+                
+            </div>
         </div>
     )
 }
