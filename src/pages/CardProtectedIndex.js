@@ -7,19 +7,10 @@ import { gsap } from 'gsap'
 const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => { 
   const { deck_id } = useParams()
   const [currentDeckTitle, setCurrentDeckTitle] = useState()
-
-  useEffect(() => {
-    const currentDeck = decks.find(deck => deck.id === parseInt(deck_id))
-    if (currentDeck) {
-      setCurrentDeckTitle(currentDeck.title)
-    }
-    readCard(deck_id)
-  }, [deck_id, decks])
-  
   const myCards = cards.filter(card => card.deck_id === parseInt(deck_id))
-
-  useLayoutEffect(() => {
   
+  useLayoutEffect(() => {
+    
     gsap.fromTo(".card-content:nth-child(even)", {
       x: "100vh"
     }, {
@@ -31,7 +22,7 @@ const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => {
       },
       clearProps: "all"
     })
-
+    
     gsap.fromTo(".card-content:nth-child(odd)", {
       x: "-100vh"
     }, {
@@ -42,10 +33,18 @@ const CardProtectedIndex = ({ decks, deleteCard, cards ,readCard }) => {
         each: .25,
       },
       clearProps: "all"
-
+      
     })
-
+    
   },[])
+  
+  useEffect(() => {
+    const currentDeck = decks.find(deck => deck.id === parseInt(deck_id))
+    if (currentDeck) {
+      setCurrentDeckTitle(currentDeck.title)
+    }
+    readCard(deck_id)
+  }, [deck_id, decks])
 
   return (
     <>
