@@ -76,10 +76,11 @@ html,body {
 	background-color: var(--card-front);
 	margin-bottom: 10%;
 	transform: rotate(760deg);
-
+	opacity: 0.9;
+	
 	&:hover{
-		opacity: 0.9;
-		transform: rotate(360deg);
+		opacity: 1;
+		transform: rotate(720deg);
 		transition: transform 0.3s ease;
 	}
 
